@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17354a"><title>字詞探險隊｜國一國文複習</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap');
+:root{--ink:#17354a;--muted:#607d8b;--bg:#eaf6f0;--gold:#ffbd50;--green:#4fba7a;--red:#e87870;--line:#d9e8df}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#e4f3ee,#fff3dd);color:var(--ink);font-family:'Noto Sans TC',sans-serif;min-height:100vh}.wrap{max-width:1020px;margin:auto;padding:18px 14px 44px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;font-size:18px}.brand span{display:inline-grid;place-items:center;width:40px;height:40px;background:var(--gold);border-radius:13px;margin-right:8px}.nav a{display:inline-block;color:#376e50;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:99px;padding:9px 13px;font-size:13px;font-weight:900}.hero{display:grid;grid-template-columns:1fr 180px;align-items:center;gap:18px;padding:24px 0}.eyebrow{font-size:12px;color:#b96a39;font-weight:900;letter-spacing:.08em}.hero h1{font-size:clamp(32px,5vw,48px);line-height:1.15;margin:8px 0}.hero p{line-height:1.75;color:var(--muted);margin:0}.scene{height:150px;border-radius:24px;background:linear-gradient(145deg,#d9f0f4,#fff0c9);display:grid;place-items:center;font-size:68px}.map,.panel{background:#ffffffdf;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 10px 28px #22556b12}.maphead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 2px 12px}.lessons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.lesson{border:2px solid transparent;background:white;border-radius:16px;padding:13px;text-align:left;min-height:100px;color:var(--ink);cursor:pointer;box-shadow:0 3px 0 #dfe9df}.lesson.active{border-color:var(--gold);background:#fff9ec}.lesson span{font-size:24px;display:block}.lesson b{display:block;margin:5px 0}.lesson small,.muted{font-size:12px;color:var(--muted)}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:8px}.tag{background:#e6f5ec;color:#34734f;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:900}.qnum{font-size:12px;color:var(--muted);font-weight:800}.track{height:8px;background:#eaf0e8;border-radius:9px;overflow:hidden;margin:13px 0 18px}.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#56bf80,#ffc252);transition:width .2s}.type{display:inline-block;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:900;background:#e8f1ff;color:#355e8d;margin-bottom:9px}.question{font-size:20px;line-height:1.55;margin:0 0 12px;font-weight:900;white-space:pre-line}.target{border:2px dashed #f2c464;border-radius:14px;background:#fffbef;padding:12px 14px;margin:10px 0 15px}.glyph{font-size:clamp(40px,7vw,62px);font-weight:900;line-height:1.25;letter-spacing:.12em}.zhuyin{font-size:clamp(26px,5vw,38px);font-weight:900;color:#386c8a;letter-spacing:.12em;margin-top:3px}.prompt{font-size:13px;color:var(--muted);margin-top:6px}.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}.ans{border:2px solid #e0eae4;background:white;border-radius:13px;padding:12px;text-align:left;font:700 16px inherit;color:var(--ink);cursor:pointer;min-height:52px}.ans:hover:not(:disabled){border-color:#77c994;background:#f6fff7}.ans:disabled{cursor:default}.ans.correct{border-color:#4eb777;background:#e5f7e9}.ans.wrong{border-color:#e87870;background:#fff0ee}.writebox{display:flex;gap:8px;align-items:center}.writebox input{min-width:0;flex:1;border:2px solid #dce9e2;border-radius:13px;padding:14px;font:900 24px 'Noto Sans TC',sans-serif;color:var(--ink)}.feedback{margin:13px 0;min-height:48px;color:#557386;font-size:14px;line-height:1.7;white-space:pre-line}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:12px 15px;font:900 14px 'Noto Sans TC',sans-serif;cursor:pointer}.primary{background:var(--gold);color:#5a3d18;box-shadow:0 3px #e5a044}.soft{background:#eaf5ed;color:#376e50}.btn:disabled{opacity:.4;cursor:not-allowed}.side h3{font-size:17px;margin:2px 0 8px}.side p{font-size:14px;line-height:1.75;color:var(--muted);margin:0}.rule{padding:13px;border-radius:14px;background:#f0f8f3;margin:12px 0}.rule b{display:block;margin-bottom:5px}.review{border-top:1px solid var(--line);margin-top:13px;padding-top:12px}.reviewitem{font-size:13px;line-height:1.65;padding:9px 0;border-bottom:1px solid #eaf0e8}.reviewitem strong{color:#c45f4e}.finish{display:none;text-align:center;padding:18px 8px}.finish .medal{font-size:52px}.finish h2{margin:5px 0}.finish p{color:var(--muted);line-height:1.8}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.resultbox{background:#f0f8f3;border-radius:13px;padding:12px}.resultbox b{font-size:22px;display:block}.toast{display:none;position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#17354a;color:white;border-radius:12px;padding:12px 17px;z-index:5}.toast.show{display:block}.foot{font-size:12px;color:var(--muted);line-height:1.7;margin:14px 3px}@media(max-width:760px){.hero{grid-template-columns:1fr}.scene{height:95px}.lessons{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.wrap{padding:14px 11px 35px}}
+.vocab{margin-top:14px}.vocabtools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}.vocabtools button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:9px 13px;font:800 13px 'Noto Sans TC',sans-serif;color:var(--ink);cursor:pointer}.vocabtools button.active{background:#fff3d5;border-color:#efc367}.vocabgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.vocabcard{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;min-height:120px}.vocabchar{font-size:clamp(27px,4vw,36px);font-weight:900;line-height:1.2;letter-spacing:.08em}.vocabzhuyin{font-size:19px;font-weight:900;color:#386c8a;margin-top:4px}.vocabmeaning{font-size:13px;line-height:1.55;color:#557386;margin-top:8px}.vocabsummary{font-size:12px;color:var(--muted)}@media(max-width:760px){.vocabgrid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand"><span>📚</span>字詞探險隊｜國一國文</div><nav class="nav"><a href="index.html">← 回科目入口</a> <a href="english.html">🔤 英文課程</a></nav></header>
+<section class="hero"><div><div class="eyebrow">翰林版七年級 · 第一冊 · 課次 1–6</div><h1>讀懂字詞，<br>把每一筆寫清楚！</h1><p>每課設有三次闖關，每關 15 題，包含詞義選擇、由意思反向辨認詞語及課文挑戰。答錯要重答同一題，答對才能前進；注音寫國字題可先在紙上書寫比對。</p></div><div class="scene" aria-label="書本與鉛筆插圖">📖✏️</div></section>
+<section class="map"><div class="maphead"><strong>🗺️ 課文探險地圖</strong><span class="muted">每課三次闖關 · 每關 15 題 · 答錯重答</span></div><div class="lessons" id="lessons"></div><div class="vocabtools" id="roundTabs" aria-label="選擇闖關輪次"></div></section>
+<section class="map vocab"><div class="maphead"><strong>🔎 國字字詞圖鑑（第一～六課）</strong><span class="vocabsummary" id="vocabCount"></span></div><p class="qnum">先看大字和注音，在紙上寫一次；每個字詞都附詞義或常用搭配。</p><div class="vocabtools" id="vocabTabs"></div><div class="vocabgrid" id="vocabGrid"></div></section>
+<section class="layout"><article class="panel"><div class="panelhead"><span class="tag" id="lessonTag"></span><span class="qnum" id="qnum"></span></div><div class="track"><i id="bar"></i></div><div id="play"><span class="type" id="type"></span><h2 class="question" id="question"></h2><div id="target"></div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="actions"><button class="btn soft" id="hint">💡 提示</button><button class="btn primary" id="next" disabled>下一題 →</button></div></div><div class="finish" id="finish"><div class="medal" id="medal">🏅</div><h2 id="finishTitle">本課結算</h2><p id="finishText"></p><div class="resultgrid"><div class="resultbox"><span class="muted">答對</span><b id="score">0/12</b></div><div class="resultbox"><span class="muted">星星</span><b id="stars"></b></div><div class="resultbox"><span class="muted">連續答對</span><b id="streak">0</b></div></div><button class="btn primary" id="again">再挑戰本課</button></div></article>
+<aside class="panel side"><h3>📌 本課學習重點</h3><p id="intro"></p><div class="rule"><b id="ruleTitle"></b><span id="ruleText" style="font-size:14px;line-height:1.7;color:#557386"></span></div><div class="review"><h3>🔁 最近錯題</h3><div id="review"></div></div></aside></section>
+<p class="foot">內容依七年級翰林版課名編排；各校選文、注釋與評量範圍可能有差異，正式使用前可再依課本版本逐項校對。注音寫國字題會顯示大字與注音，方便逐字在紙上書寫比對。</p></main><div class="toast" id="toast"></div>
+<script>
+// Each record: [type, prompt, options (optional), answer, explanation, character (optional), zhuyin (optional)]
+const lessons=[
+{title:'夏夜',icon:'🌙',desc:'在夏夜的景物與聲音中，觀察詩人如何描寫夏日田園的寧靜與生氣。',rule:'閱讀提醒',text:'讀新詩時留意感官摹寫、擬人與畫面變化；先找景物，再看景物帶來的感受。',qs:[
+['詞語','「蟬聲」屬於哪一種感官摹寫？',['視覺','聽覺','嗅覺','味覺'],1,'「聲」是耳朵聽見的聲音。'],
+['詞語','「繁星」最接近哪個意思？',['稀少的星星','很多的星星','流動的雲朵','明亮的月亮'],1,'繁有眾多、茂盛之意；繁星就是眾多的星星。'],
+['注釋','「乘涼」的意思是？',['趁天亮趕路','在涼爽處避暑','乘船遊河','把東西放涼'],1,'乘涼指趁著涼爽時候納涼、消暑。'],
+['注音寫國字','依注音寫出國字：ㄔㄢˊ',['蟬','禪','嬋','纏'],0,'ㄔㄢˊ可寫作「蟬」；蟬是夏日常見昆蟲。','蟬','ㄔㄢˊ'],
+['詞語','「此起彼落」形容什麼情形？',['聲音或事情接連不斷','景物完全靜止','一個人獨自離開','東西堆疊很高'],0,'這裡可形容不同聲音接連出現。'],
+['注音寫國字','依注音寫出國字：ㄇㄟˊ',['眉','梅','媒','煤'],1,'ㄇㄟˊ在夏夜景物詞中可寫作「梅」；請對照課文中的詞語。','梅','ㄇㄟˊ'],
+['注釋','「田畦」是指？',['田地中分成的小區','山頂的石頭','河岸的沙洲','庭院的圍牆'],0,'畦是田地中劃分的小區域。'],
+['詞語','把景物寫得像人一樣有動作或情感，稱為？',['譬喻','擬人','排比','對偶'],1,'將事物人格化，稱為擬人。'],
+['注音寫國字','依注音寫出國字：ㄧㄥˊ',['螢','營','迎','盈'],0,'ㄧㄥˊ可寫作「螢」，如螢火蟲。','螢','ㄧㄥˊ'],
+['注釋','「涼風習習」的「習習」形容？',['風輕柔地吹動','雨勢非常猛烈','天氣酷熱難耐','樹葉完全不動'],0,'習習常用來形容微風和煦地吹。'],
+['詞語','閱讀寫景詩時，找出「蟬聲、蛙鳴」主要是在辨認？',['人物','聲音景物','時間順序','數字'],1,'先辨識詩中具體景物與聲音，有助掌握畫面。'],
+['注音寫國字','依注音寫出國字：ㄌㄨㄛˋ（星星降下）',['落','洛','絡','駱'],0,'星星「落」下的落，注音為 ㄌㄨㄛˋ。','落','ㄌㄨㄛˋ']
+]},
+{title:'無心的錯誤',icon:'🧭',desc:'從一次無心造成的錯誤，思考觀察、判斷與承認錯誤的重要。',rule:'閱讀提醒',text:'留意事情的起因、誤判的過程與後來的省思；「無心」不代表不用負責，仍要理解結果並修正。',qs:[
+['詞語','「無心的錯誤」中的「無心」最接近？',['故意而為','不是出於故意','完全不在意','沒有心情'],1,'無心在此指非故意、並非存心造成。'],
+['注釋','「懊悔」的意思是？',['因做錯事而後悔','非常歡喜','感到驚訝','不想理會'],0,'懊悔是做錯或不如意後感到悔恨。'],
+['注音寫國字','依注音寫出國字：ㄔㄚˊ（仔細看）',['察','查','茶','差'],0,'「觀察」的察，注音為 ㄔㄚˊ。','察','ㄔㄚˊ'],
+['詞語','「疏忽」最接近哪個意思？',['粗心而沒有注意','仔細檢查','快速完成','反覆練習'],0,'疏忽是粗心大意、沒有留意。'],
+['注釋','「辯解」是指？',['提出理由說明自己的行為','把事情記錄下來','向別人道賀','安慰受傷的人'],0,'辯解是對事情或行為提出理由加以說明。'],
+['注音寫國字','依注音寫出國字：ㄔㄥˊ（承認）',['承','成','城','誠'],0,'承認的「承」注音為 ㄔㄥˊ。','承','ㄔㄥˊ'],
+['詞語','發現自己判斷錯誤，較適當的做法是？',['先承認並查明原因','怪罪別人','假裝沒發生','只記得結果'],0,'承認錯誤並釐清原因，才能修正做法。'],
+['注釋','「始料未及」的意思是？',['事情結果超出原先預料','事情完全照計畫進行','一開始就知道答案','事情已經結束很久'],0,'始料未及指事情的發展超乎起初的預想。'],
+['注音寫國字','依注音寫出國字：ㄨˋ（錯誤）',['誤','悟','物','務'],0,'錯「誤」的誤，注音為 ㄨˋ。','誤','ㄨˋ'],
+['詞語','「反省」主要是？',['回頭檢視自己的言行','把事情交給別人','重新抄寫課文','暫時忘掉問題'],0,'反省是檢討自己的思想、行為。'],
+['注釋','「彌補」的意思是？',['補救不足或過失','讓事情更混亂','避免所有改變','把物品平均分配'],0,'彌補指補足缺失、補救過失。'],
+['注音寫國字','依注音寫出國字：ㄩㄢˊ（原因）',['原','源','圓','園'],0,'原「因」的原注音為 ㄩㄢˊ。','原','ㄩㄢˊ']
+]},
+{title:'母親的教誨',icon:'🌱',desc:'回想母親的叮嚀與教導，從生活經驗理解自律、誠實與感念。',rule:'閱讀提醒',text:'注意敘事者回憶的事件與母親說的話，想想這些教誨如何影響後來的選擇。',qs:[
+['詞語','「教誨」的意思是？',['教導、勸勉','責怪、處罰','談論天氣','詢問近況'],0,'教誨指教導、訓誡。'],
+['注釋','「叮嚀」是？',['反覆仔細地囑咐','大聲地唱歌','匆忙地離開','故意地隱瞞'],0,'叮嚀指再三囑咐。'],
+['注音寫國字','依注音寫出國字：ㄏㄨㄟˇ（後悔）',['悔','誨','晦','慧'],0,'後「悔」的悔注音為 ㄏㄨㄟˇ。','悔','ㄏㄨㄟˇ'],
+['詞語','「自律」最接近？',['自我約束並遵守原則','要求別人服從','凡事依賴他人','隨心所欲行動'],0,'自律是自我約束，使言行合乎規範。'],
+['注釋','「銘記」的意思是？',['牢牢記在心裡','刻意忘掉','寫在黑板上','隨口說說'],0,'銘記指深深記住、不忘。'],
+['注音寫國字','依注音寫出國字：ㄔㄥˊ（誠實）',['誠','成','承','城'],0,'誠實的「誠」注音為 ㄔㄥˊ。','誠','ㄔㄥˊ'],
+['詞語','「言而有信」形容一個人？',['說到做到、守信用','能言善道','不願表達','記憶力很好'],0,'言而有信是說話守信用，說到做到。'],
+['注釋','「體恤」是？',['設身處地體諒他人','嚴格責罵別人','隨意評論事情','反覆詢問答案'],0,'體恤指體諒、憐惜他人的處境。'],
+['注音寫國字','依注音寫出國字：ㄐㄧㄣˇ（謹慎）',['謹','緊','錦','盡'],0,'謹慎的「謹」注音為 ㄐㄧㄣˇ。','謹','ㄐㄧㄣˇ'],
+['詞語','回憶中的教誨，最可能讓讀者思考？',['如何把道理用在生活選擇','如何背誦更多地名','如何描寫季節變化','如何計算時間'],0,'文章透過生活經驗呈現教導對選擇與成長的影響。'],
+['注釋','「受用」在「一生受用」中是？',['得到益處','接受物品','感到辛苦','受到批評'],0,'受用在此指得到益處或啟發。'],
+['注音寫國字','依注音寫出國字：ㄈㄨˋ（反覆叮嚀）',['覆','復','負','赴'],0,'反「覆」的覆，注音為 ㄈㄨˋ。','覆','ㄈㄨˋ']
+]},
+{title:'論語選',icon:'📜',desc:'讀三則《論語》選文，理解孝要有敬意、做事貴在持續，以及每天反省言行。',rule:'文言文閱讀提醒',text:'先抓關鍵字，再把句子換成自己的話。〈譬如為山〉談進退由己；〈吾日三省吾身〉提醒反思待人與學習。',qs:[
+['詞語','〈子游問孝〉中，孔子指出只供給父母衣食還不夠，還需要？',['敬重父母','替父母做所有決定','只在節日送禮','避免和父母說話'],0,'這則選文提醒，奉養之外還要有敬意。'],
+['注釋','「何以別乎」中的「何以」意思是？',['用什麼、怎麼','什麼時候','為什麼不做','到哪裡去'],0,'何以是「以何」的倒裝，可解作用什麼、怎麼。'],
+['注音寫國字','依注音寫出國字：ㄐㄧㄥˋ（敬重）',['敬','竟','境','鏡'],0,'敬重的「敬」注音為 ㄐㄧㄥˋ。','敬','ㄐㄧㄥˋ'],
+['注釋','「簣」在「未成一簣」中指？',['盛土的竹器','一種樂器','山上的石頭','測量土地的尺'],0,'簣是盛土的竹筐；一簣就是一筐土。'],
+['詞語','〈譬如為山〉用堆山的比喻，主要說明？',['能否完成與自己是否繼續努力有關','做事只靠別人幫忙','學習一定要很快','山越高越容易完成'],0,'停止是自己停止，繼續前進也是自己選擇，強調努力由己。'],
+['注音寫國字','依注音寫出國字：ㄎㄨㄟˋ（盛土的竹器）',['簣','潰','匱','愧'],0,'「一簣」的簣注音為 ㄎㄨㄟˋ。','簣','ㄎㄨㄟˋ'],
+['注釋','「吾日三省吾身」中的「省」是？',['反省、檢查自己','減少數量','探望長輩','省略文字'],0,'省在此讀 ㄒㄧㄥˇ，意思是反省、檢查。'],
+['詞語','曾子所列的每日自我檢查，不包括哪一項？',['替人辦事是否盡心','和朋友交往是否守信','老師傳授的是否複習','每天是否比別人有名'],3,'三項分別關於盡心、守信、複習所學。'],
+['注音寫國字','依注音寫出國字：ㄒㄧㄥˇ（反省）',['省','醒','姓','星'],0,'反省的「省」讀 ㄒㄧㄥˇ。','省','ㄒㄧㄥˇ'],
+['注釋','「傳不習乎」中的「傳」指？',['老師傳授的學問','傳遞物品','傳說故事','傳話給朋友'],0,'這裡的傳指老師傳授的知識或學問。'],
+['詞語','「與朋友交而不信乎」提醒人與朋友相處要？',['守信用','比輸贏','凡事附和','不談自己的想法'],0,'信在句中指誠信、守信用。'],
+['注音寫國字','依注音寫出國字：ㄒㄧㄣˋ（守信用）',['信','姓','幸','興'],0,'誠「信」的信注音為 ㄒㄧㄣˋ。','信','ㄒㄧㄣˋ']
+]},
+{title:'背影',icon:'🧳',desc:'跟隨敘事者回憶父親送行的往事，觀察平實細節如何表現深厚親情。',rule:'閱讀提醒',text:'留意本文以現在起筆、回憶往事，再回到現在的安排；父親買橘子的背影是情感凝聚處。',qs:[
+['詞語','〈背影〉中父親特意穿過月臺去做的事是？',['替孩子買橘子','去找車站站長','拿取行李票','向朋友借雨傘'],0,'送行時父親越過月臺替孩子買橘子，是文章重要情節。'],
+['注釋','「蹣跚」形容走路？',['腿腳不靈便、搖搖晃晃','步伐輕快','整齊一致','大步奔跑'],0,'蹣跚形容走路不穩、緩慢的樣子。'],
+['注音寫國字','依注音寫出國字：ㄕㄢ（蹣跚）',['跚','珊','刪','杉'],0,'蹣「跚」的跚注音為 ㄕㄢ。','跚','ㄕㄢ'],
+['詞語','文章多次寫到父親的背影，主要讓讀者感受到？',['父親對孩子深切而含蓄的關愛','父親不熟悉車站','孩子對旅行很期待','車站十分熱鬧'],0,'父親的動作與背影承載了作者對父愛的感受。'],
+['注釋','「躊躇」的意思是？',['猶豫不決','非常高興','匆忙趕路','大聲交談'],0,'躊躇指猶豫、遲疑不決。'],
+['注音寫國字','依注音寫出國字：ㄔㄡˊ（躊躇）',['躊','籌','酬','愁'],0,'「躊」躇的躊注音為 ㄔㄡˊ。','躊','ㄔㄡˊ'],
+['注釋','「狼藉」在描寫地上物品時，意思是？',['散亂不整','乾淨明亮','排列整齊','數量很少'],0,'狼藉形容凌亂、散亂的樣子。'],
+['詞語','文中父親親自攀上月臺買橘子的描寫，屬於哪種描寫？',['動作描寫','景物描寫','聲音描寫','外貌對比'],0,'攀、縮等動作使送橘子的情景具體呈現。'],
+['注音寫國字','依注音寫出國字：ㄙㄨㄛˇ（細碎、不重要）',['瑣','鎖','所','索'],0,'瑣事的「瑣」注音為 ㄙㄨㄛˇ。','瑣','ㄙㄨㄛˇ'],
+['注釋','「頹唐」常用來形容？',['精神低落、衰頹','神采奕奕','態度謙恭','動作敏捷'],0,'頹唐形容精神不振、情緒低落。'],
+['詞語','〈背影〉的敘事方式主要是？',['回憶往事的記敘','逐步說明操作方法','提出論點加以辯證','記錄旅行路線'],0,'作者由當下感受引出對往事的回憶，屬記敘文。'],
+['注音寫國字','依注音寫出國字：ㄊㄨㄟˊ（精神低落）',['頹','推','腿','退'],0,'頹唐的「頹」注音為 ㄊㄨㄟˊ。','頹','ㄊㄨㄟˊ']
+]},
+{title:'心囚',icon:'🕊️',desc:'從杏林子的生命經驗思考身體受限與心靈自由，練習辨認觀點並尊重不同處境。',rule:'閱讀提醒',text:'文章以「囚」作為比喻，對照外在限制與內心是否被困住；理解作者如何從生命經驗提出想法。',qs:[
+['詞語','〈心囚〉題目中的「囚」主要用來比喻？',['心靈受到困住、限制','住在山中的人','身體正在旅行','被關在教室的人'],0,'題目把「囚」延伸為心靈受限的狀態。'],
+['注釋','「囹圄」是指？',['監牢','花園','書房','市場'],0,'囹圄指監獄、牢獄。'],
+['注音寫國字','依注音寫出國字：ㄌㄧㄥˊ（囹圄）',['囹','玲','鈴','零'],0,'「囹」圄的囹注音為 ㄌㄧㄥˊ。','囹','ㄌㄧㄥˊ'],
+['詞語','文章藉由作者行動不便的生命經驗，主要引導讀者？',['思考如何面對限制並珍惜心靈的自由','比較誰跑得比較快','只注意疾病名稱','避免和不同處境的人相處'],0,'文本鼓勵面對限制、突破心靈枷鎖，也關注生命價值。'],
+['注釋','「禁錮」的意思是？',['限制自由，使不能活動或發展','公開表揚','仔細保護','短暫休息'],0,'禁錮指限制、束縛，使不能自由活動。'],
+['注音寫國字','依注音寫出國字：ㄍㄨˋ（禁錮）',['錮','固','故','顧'],0,'禁「錮」的錮注音為 ㄍㄨˋ。','錮','ㄍㄨˋ'],
+['詞語','把「心」比作囚室，這種寫法主要運用？',['譬喻','排比','對偶','摹聲'],0,'以囚室比喻心靈被困住，是譬喻的表達方式。'],
+['注釋','「罹患」的意思是？',['染上疾病','離開家鄉','得到獎賞','失去物品'],0,'罹患指遭受、患有疾病。'],
+['注音寫國字','依注音寫出國字：ㄌㄧˊ（罹患）',['罹','離','梨','黎'],0,'「罹」患的罹注音為 ㄌㄧˊ。','罹','ㄌㄧˊ'],
+['詞語','面對身心障礙者時，較合宜的態度是？',['尊重差異並理解其處境','只用同情的眼光看待','替對方決定所有事情','假設每個人的需求都一樣'],0,'尊重個別差異並理解需求，才是合宜的相處方式。'],
+['注釋','「沮喪」的意思是？',['失望、情緒低落','十分興奮','感到疑惑','悠閒自在'],0,'沮喪指失望、灰心、情緒低落。'],
+['注音寫國字','依注音寫出國字：ㄐㄩˇ（失望低落）',['沮','咀','阻','組'],0,'沮喪的「沮」注音為 ㄐㄩˇ。','沮','ㄐㄩˇ']
+]}
+];
+const vocabBank=[
+{lesson:0,title:'第一課｜夏夜',words:[['繁星','ㄈㄢˊ ㄒㄧㄥ','眾多的星星'],['田畦','ㄊㄧㄢˊ ㄑㄧˊ','田地中分成的小區域'],['乘涼','ㄔㄥˊ ㄌㄧㄤˊ','在涼爽處休息、消暑'],['蟬聲','ㄔㄢˊ ㄕㄥ','蟬發出的聲音'],['螢火蟲','ㄧㄥˊ ㄏㄨㄛˇ ㄔㄨㄥˊ','夜間會發光的昆蟲'],['習習','ㄒㄧˊ ㄒㄧˊ','形容微風吹拂'],['此起彼落','ㄘˇ ㄑㄧˇ ㄅㄧˇ ㄌㄨㄛˋ','這裡起、那裡落；接連不斷'],['擬人','ㄋㄧˇ ㄖㄣˊ','把事物寫得像人一樣'],['蛙鳴','ㄨㄚ ㄇㄧㄥˊ','青蛙的叫聲'],['寧靜','ㄋㄧㄥˊ ㄐㄧㄥˋ','安靜平和'],['繁茂','ㄈㄢˊ ㄇㄠˋ','繁密茂盛'],['景物','ㄐㄧㄥˇ ㄨˋ','風景中的事物'],['感官','ㄍㄢˇ ㄍㄨㄢ','視覺、聽覺等感受能力'],['田園','ㄊㄧㄢˊ ㄩㄢˊ','田地與園圃；鄉村景色'],['涼風','ㄌㄧㄤˊ ㄈㄥ','清涼的風']]},
+{lesson:1,title:'第二課｜無心的錯誤',words:[['無心','ㄨˊ ㄒㄧㄣ','不是出於故意'],['疏忽','ㄕㄨ ㄏㄨ','粗心而沒有注意'],['懊悔','ㄠˋ ㄏㄨㄟˇ','做錯事後悔恨'],['辯解','ㄅㄧㄢˋ ㄐㄧㄝˇ','提出理由說明自己的行為'],['始料未及','ㄕˇ ㄌㄧㄠˋ ㄨㄟˋ ㄐㄧˊ','事情發展超出原先預料'],['反省','ㄈㄢˇ ㄒㄧㄥˇ','檢視自己的思想或行為'],['彌補','ㄇㄧˊ ㄅㄨˇ','補足缺失、補救過失'],['承認','ㄔㄥˊ ㄖㄣˋ','肯定並接受事實'],['觀察','ㄍㄨㄢ ㄔㄚˊ','仔細察看'],['判斷','ㄆㄢˋ ㄉㄨㄢˋ','分析後作出決定'],['原因','ㄩㄢˊ ㄧㄣ','造成結果的條件'],['結果','ㄐㄧㄝˊ ㄍㄨㄛˇ','事情發展後的狀況'],['故意','ㄍㄨˋ ㄧˋ','存心、有意地做'],['修正','ㄒㄧㄡ ㄓㄥˋ','改正錯誤'],['負責','ㄈㄨˋ ㄗㄜˊ','承擔應做的事']]},
+{lesson:2,title:'第三課｜母親的教誨',words:[['教誨','ㄐㄧㄠˋ ㄏㄨㄟˋ','教導、勸勉'],['叮嚀','ㄉㄧㄥ ㄋㄧㄥˊ','再三仔細囑咐'],['自律','ㄗˋ ㄌㄩˋ','自我約束並遵守原則'],['銘記','ㄇㄧㄥˊ ㄐㄧˋ','牢牢記在心裡'],['誠實','ㄔㄥˊ ㄕˊ','言行真實、不欺騙'],['言而有信','ㄧㄢˊ ㄦˊ ㄧㄡˇ ㄒㄧㄣˋ','說到做到、守信用'],['體恤','ㄊㄧˇ ㄒㄩˋ','體諒、憐惜他人處境'],['謹慎','ㄐㄧㄣˇ ㄕㄣˋ','小心慎重'],['受用','ㄕㄡˋ ㄩㄥˋ','得到益處或啟發'],['教導','ㄐㄧㄠˋ ㄉㄠˇ','教誨指引'],['品格','ㄆㄧㄣˇ ㄍㄜˊ','個人的品行與操守'],['感念','ㄍㄢˇ ㄋㄧㄢˋ','感激懷念'],['守信','ㄕㄡˇ ㄒㄧㄣˋ','遵守信用'],['約束','ㄩㄝ ㄕㄨˋ','限制、管束自己的行為'],['反覆','ㄈㄢˇ ㄈㄨˋ','一次又一次']]},
+
+{lesson:3,title:'第四課｜論語選',words:[
+['論語','ㄌㄨㄣˊ ㄩˇ','書名；記錄孔子及其弟子言行的典籍'],['典籍','ㄉㄧㄢˇ ㄐㄧˊ','重要的書籍'],['儒家','ㄖㄨˊ ㄐㄧㄚ','以孔子思想為代表的學派'],['有教無類','ㄧㄡˇ ㄐㄧㄠˋ ㄨˊ ㄌㄟˋ','施教不因對象的類別而有所區別'],['智慧','ㄓˋ ㄏㄨㄟˋ','明辨事理、靈活思考的能力'],['奉養','ㄈㄥˋ ㄧㄤˇ','供給父母衣食生活所需'],['倫理','ㄌㄨㄣˊ ㄌㄧˇ','人與人相處應遵守的道理'],['語錄','ㄩˇ ㄌㄨˋ','言論的記錄'],['克己','ㄎㄜˋ ㄐㄧˇ','約束自己'],['為山','ㄨㄟˊ ㄕㄢ','堆土成山；為，建造'],['窪地','ㄨㄚ ㄉㄧˋ','低下的地方'],['一簣','ㄧ ㄎㄨㄟˋ','一筐土；簣是盛土的竹筐'],['罕見','ㄏㄢˇ ㄐㄧㄢˋ','少見、不常見'],['三省','ㄙㄢ ㄒㄧㄥˇ','多次反省；省，檢查自己'],['所謂','ㄙㄨㄛˇ ㄨㄟˋ','所說的'],['傳授','ㄔㄨㄢˊ ㄕㄡˋ','把知識或技藝教給別人'],['記載','ㄐㄧˋ ㄗㄞˇ','把事情寫下來'],['閔子騫','ㄇㄧㄣˇ ㄗˇ ㄑㄧㄢ','孔子的弟子之一'],['顏淵','ㄧㄢˊ ㄩㄢ','孔子的弟子之一'],['饋贈','ㄎㄨㄟˋ ㄗㄥˋ','贈送禮物'],['辨別','ㄅㄧㄢˋ ㄅㄧㄝˊ','分辨、判別'],['竹筐','ㄓㄨˊ ㄎㄨㄤ','用竹子編成的筐'],['出席','ㄔㄨ ㄒㄧˊ','到場參加'],['潰敗','ㄎㄨㄟˋ ㄅㄞˋ','被打敗而潰散'],['九仞','ㄐㄧㄡˇ ㄖㄣˋ','仞是古代長度單位；常見於「為山九仞」'],['允諾','ㄩㄣˇ ㄋㄨㄛˋ','答應、許可'],['匱乏','ㄎㄨㄟˋ ㄈㄚˊ','缺乏、不足'],['淪落','ㄌㄨㄣˊ ㄌㄨㄛˋ','陷入不好的境地'],['應有盡有','ㄧㄥ ㄧㄡˇ ㄐㄧㄣˋ ㄧㄡˇ','應該有的全都有'],['侍奉','ㄕˋ ㄈㄥˋ','服侍、照料'],['吸吮','ㄒㄧ ㄕㄨㄣˇ','用嘴吸'],['冉冉','ㄖㄢˇ ㄖㄢˇ','慢慢地；逐漸地'],['好學','ㄏㄠˋ ㄒㄩㄝˊ','喜歡學習；好，喜愛'],['誠信','ㄔㄥˊ ㄒㄧㄣˋ','誠懇守信；〈論語〉用「信」說明交友之道']
+]},
+{lesson:4,title:'第五課｜背影',words:[
+['細膩','ㄒㄧˋ ㄋㄧˋ','細緻、周密'],['江浦','ㄐㄧㄤ ㄆㄨˇ','江岸、水邊'],['膀子','ㄅㄤˇ ˙ㄗ','肩膀'],['囑託','ㄓㄨˇ ㄊㄨㄛ','叮嚀、託付'],['呵護','ㄏㄜ ㄏㄨˋ','關心照顧'],['心弦','ㄒㄧㄣ ㄒㄧㄢˊ','內心深處；常說「動人心弦」'],['揀選','ㄐㄧㄢˇ ㄒㄩㄢˇ','挑選'],['瑣事','ㄙㄨㄛˇ ㄕˋ','細小、不重要的事'],['抵禦','ㄉㄧˇ ㄩˋ','抵抗、防禦'],['差遣','ㄔㄞ ㄑㄧㄢˇ','派人去做事'],['猶豫','ㄧㄡˊ ㄩˋ','拿不定主意'],['看顧','ㄎㄢ ㄍㄨˋ','照料、看護'],['親屬','ㄑㄧㄣ ㄕㄨˇ','親戚及家屬'],['撲簌','ㄆㄨ ㄙㄨˋ','眼淚或紛紛落下的樣子'],['置辦','ㄓˋ ㄅㄢˋ','購買、備辦'],['奠定','ㄉㄧㄢˋ ㄉㄧㄥˋ','建立、確立'],['奔喪','ㄅㄣ ㄙㄤ','回家料理親人的喪事'],['嘴饞','ㄗㄨㄟˇ ㄔㄢˊ','貪吃、想吃東西'],['矚目','ㄓㄨˇ ㄇㄨˋ','注視、關注'],['妥帖','ㄊㄨㄛˇ ㄊㄧㄝ','恰當、妥當'],['躊躇','ㄔㄡˊ ㄔㄨˊ','猶豫不決；也可形容自得的樣子'],['蹣跚','ㄇㄢˊ ㄕㄢ','走路緩慢、不穩的樣子'],['迂腐','ㄩ ㄈㄨˇ','拘泥守舊、不合時宜'],['箸','ㄓㄨˋ','筷子；課文常見「舉箸」一詞'],['攀爬','ㄆㄢ ㄆㄚˊ','抓住物體向上爬'],['店鋪','ㄉㄧㄢˋ ㄆㄨˋ','商店；鋪另有攤開、鋪設等讀音'],['拭淚','ㄕˋ ㄌㄟˋ','擦眼淚'],['攙扶','ㄔㄢ ㄈㄨˊ','扶著、架著'],['囑咐','ㄓㄨˇ ㄈㄨˋ','叮嚀交代'],['柵欄','ㄓㄚˋ ㄌㄢˊ','用木條或鐵條做成的圍欄'],['簌簌','ㄙㄨˋ ㄙㄨˋ','形容眼淚或細小物體紛紛落下'],['馬褂','ㄇㄚˇ ㄍㄨㄚˋ','舊式男子穿在長袍外的短褂'],['參差','ㄘㄣ ㄘ','長短、高低不齊'],['卸貨','ㄒㄧㄝˋ ㄏㄨㄛˋ','把貨物從車船上搬下來'],['傾斜','ㄑㄧㄥ ㄒㄧㄝˊ','歪向一邊'],['御寒','ㄩˋ ㄏㄢˊ','抵禦寒冷'],['橘子','ㄐㄩˊ ˙ㄗ','柑橘類水果；課文中父親買橘子的物件'],['狼藉','ㄌㄤˊ ㄐㄧˊ','散亂不整齊']
+]},
+{lesson:5,title:'第六課｜心囚',words:[
+['罹患','ㄌㄧˊ ㄏㄨㄢˋ','遭受、患有疾病'],['囚犯','ㄑㄧㄡˊ ㄈㄢˋ','被關在監獄中的人'],['沉溺','ㄔㄣˊ ㄋㄧˋ','陷入不良境地而難以自拔'],['鑿壁借光','ㄗㄠˊ ㄅㄧˋ ㄐㄧㄝˋ ㄍㄨㄤ','形容勤學苦讀'],['憔悴','ㄑㄧㄠˊ ㄘㄨㄟˋ','瘦弱、面容不好'],['伊甸園','ㄧ ㄉㄧㄢˋ ㄩㄢˊ','聖經中的樂園；比喻美好的地方'],['鋃鐺','ㄌㄤˊ ㄉㄤ','鐵製刑具；也形容被拘繫'],['囹圄','ㄌㄧㄥˊ ㄩˇ','監牢'],['禁錮','ㄐㄧㄣˋ ㄍㄨˋ','限制自由，使不能活動或發展'],['轄制','ㄒㄧㄚˊ ㄓˋ','管束、控制'],['監禁','ㄐㄧㄢ ㄐㄧㄣˋ','把人關押起來'],['乾瘦','ㄍㄢ ㄕㄡˋ','瘦得只剩骨架'],['徒然','ㄊㄨˊ ㄖㄢˊ','白白地、沒有效果'],['制約','ㄓˋ ㄩㄝ','限制、約束'],['憂鬱','ㄧㄡ ㄩˋ','憂傷愁悶'],['頹廢','ㄊㄨㄟˊ ㄈㄟˋ','意志消沉、精神不振'],['潦草','ㄌㄧㄠˊ ㄘㄠˇ','字跡草率；也指做事不仔細'],['主宰','ㄓㄨˇ ㄗㄞˇ','掌握、支配'],['陷入','ㄒㄧㄢˋ ㄖㄨˋ','進入不利或難以脫離的處境'],['枷鎖','ㄐㄧㄚ ㄙㄨㄛˇ','拘束身心的事物'],['發憤','ㄈㄚ ㄈㄣˋ','振作努力'],['寡言','ㄍㄨㄚˇ ㄧㄢˊ','不多說話'],['杏林子','ㄒㄧㄥˋ ㄌㄧㄣˊ ㄗˇ','本名劉俠，本文作者'],['痼疾','ㄍㄨˋ ㄐㄧˊ','難以治癒的疾病或長久形成的習慣'],['乾涸','ㄍㄢ ㄏㄜˊ','水源枯竭'],['鐐銬','ㄌㄧㄠˊ ㄎㄠˋ','鐐是腳鐐，銬是手銬'],['燎原','ㄌㄧㄠˊ ㄩㄢˊ','大火延燒原野；常用「星火燎原」'],['憤慨','ㄈㄣˋ ㄎㄞˇ','憤怒而不平'],['思慮','ㄙ ㄌㄩˋ','思考、考慮'],['俘虜','ㄈㄨˊ ㄌㄨˇ','戰爭中被擄獲的人'],['剝奪','ㄅㄛ ㄉㄨㄛˊ','用強制手段奪去'],['主席','ㄓㄨˇ ㄒㄧˊ','主持會議的人；或組織的領導人'],['撩亂','ㄌㄧㄠˊ ㄌㄨㄢˋ','紛亂；與「燎原」音形須辨'],['纏繞','ㄔㄢˊ ㄖㄠˋ','纏住、繞住'],['沮喪','ㄐㄩˇ ㄙㄤˋ','失望、灰心'],['頹喪','ㄊㄨㄟˊ ㄙㄤˋ','情緒低落、意志消沉'],['沉迷','ㄔㄣˊ ㄇㄧˊ','深深迷戀而難以自拔'],['圈欄','ㄑㄩㄢ ㄌㄢˊ','關養牲畜的欄舍']
+]}
+];
+const advancedQs={
+3:[
+['文言字義','「今之孝者，是謂能養」與「至於犬馬，皆能有養」兩個「養」的意思，最恰當的說明是？',['前者指奉養父母，後者指供給犬馬食物','兩者都只指餵食','前者指飼養動物，後者指尊敬長輩','前者指教育，後者指照料'],0,'前句的養指以衣食奉養父母；後句說犬馬也能得到餵養，因此下文追問「敬」的差別。'],
+['文意推論','孔子以犬馬也能「有養」反問，主要是要補充孝道中的哪一層？',['物質供養之外，還要有敬愛之心','父母必須接受子女的安排','子女應先完成學業再奉養','飼養動物與孝親完全相同'],0,'反問「不敬，何以別乎」指出孝不能只有供給，還需要恭敬。'],
+['形音辨析','下列「省」字的讀音與意思，何者正確？',['三省吾身：ㄒㄧㄥˇ，檢查、反省','省吃儉用：ㄒㄧㄥˇ，探望','不省人事：ㄕㄥˇ，節約','省略文字：ㄒㄧㄥˇ，反省'],0,'「三省吾身」的省讀ㄒㄧㄥˇ，意為反省、檢查。'],
+['文言字義','「吾往也」的「往」應依上下文解作？',['我前往繼續填土','我停止前進','我往回走','我去找別人幫忙'],0,'前文說「雖覆一簣，進」，往在這裡指繼續前往填土。'],
+['成語連結','「為山九仞，功虧一簣」與〈譬如為山〉共同強調的觀念是？',['事情能否完成，關鍵在最後是否持續努力','只要開始就一定能成功','合作比個人努力重要','目標太大就不應嘗試'],0,'兩者都以堆山差一筐土比喻功敗垂成、不可半途而廢。'],
+['文言句意','把「止，吾止也；進，吾往也」換成白話，何者最貼近？',['停下來是我自己停下來；繼續前進也是我自己前往','別人叫我停我就停；別人叫我走我才走','走得快就能成功，走得慢便會失敗','停下來能休息，前進只會更辛苦'],0,'兩句都以「吾」作主體，凸顯停止或前進由自己決定。'],
+['文意比較','若只替父母準備衣食，卻常不耐煩地回應，依〈子游問孝〉的觀點，最適當的判斷是？',['做到奉養，仍未充分表現孝敬','已完全做到孝道，態度不重要','只要多給物品便能彌補不敬','孝道只適用於年長父母'],0,'本課特別區分能養與有敬，物質照料不能取代敬意。'],
+['形近字辨析','下列詞語用字全都正確的是？',['功虧一簣、匱乏、饋贈','功虧一潰、櫃乏、潰贈','功虧一簣、潰乏、匱贈','功虧一饋、匱乏、潰贈'],0,'「簣」是竹筐；「匱乏」指不足；「饋贈」指贈送。'],
+['語境選字','「老師所＿＿的課業，應及時溫習」應填哪個詞？',['傳授','傳記','流傳','傳達'],0,'「傳不習乎」的傳指老師傳授的學問。'],
+['多音字','下列讀音配對何者正確？',['為山：ㄨㄟˊ；為了：ㄨㄟˋ','為山：ㄨㄟˋ；為了：ㄨㄟˊ','三省：ㄕㄥˇ；省錢：ㄒㄧㄥˇ','奉養：ㄧㄤˋ；養馬：ㄧㄤˇ'],0,'「為山」是建造，讀ㄨㄟˊ；「為了」表示目的，讀ㄨㄟˋ。'],
+['作者意圖','三則〈論語選〉分別談孝、為學與自我檢視，適合用哪一組概念統整？',['敬親、持續、反省','競爭、服從、求快','供養、炫耀、責人','守舊、停滯、順從'],0,'三則核心分別是孝親要有敬意、做事持續努力、每日反省言行。'],
+['文言推論','如果堆山「只差一簣」便停止，依本課比喻，造成結果的直接原因是？',['行動者自己停止了努力','土不夠多且無法取得','旁人不肯幫忙搬土','山的高度無法測量'],0,'文中明說「止，吾止也」，停止來自自己。'],
+['語意辨析','「不虞匱乏」中的「匱乏」與「匱」字的意思最接近哪一項？',['缺少、不充足','潰散、失敗','贈送、回報','分辨、判別'],0,'匱乏就是缺乏、不足；不可與潰敗、饋贈混淆。'],
+['綜合判讀','下列哪一位的做法最符合三則選文的共同精神？',['照顧家人時心存敬意，遇到難題持續努力，也定期檢視自己','完成一次任務後不再複習，並要求朋友替自己負責','只重視供給物品，不必在意待人態度','遇到失敗先怪罪環境，再停止嘗試'],0,'選項同時呼應敬親、持續努力和反省。'],
+['文言字義','「不亦說乎」中的「說」通「悅」，若依句意解釋應為？',['愉快','說明','勸說','言說'],0,'此處「說」讀ㄩㄝˋ，通「悅」，表示喜悅。']
+],
+4:[
+['語境選詞','作者安排父親親自送行、再三囑託茶房，最能顯示父親當時的？',['不放心與細心照料','急於趕路而不耐煩','希望作者獨立生活','對旅館服務不滿'],0,'送行與反覆交代都呈現父親掛念兒子、事事不放心。'],
+['形音辨析','「躊躇」在「躊躇滿志」與課文送行情境中的意思，依序為何？',['自得的樣子；猶豫不決','猶豫不決；自得的樣子','走路不穩；步伐輕快','遲到；等待'],0,'躊躇可表示自得，也可表示猶豫；須由語境判斷。'],
+['文意推論','父親說「我買幾個橘子去。你就在此地，不要走動」，這句話最能表現？',['父親想親自照顧兒子，並擔心他離開','父親不想讓兒子買橘子','父親要求兒子替自己搬行李','父親認為月臺很安全'],0,'父親親自去買，還叮囑兒子留在原地，照料之意明顯。'],
+['倒反修辭','作者回想自己當時「真是聰明過分」，最可能運用何種語氣？',['反語，表達對年少不懂父愛的自責','稱讚自己能獨立處理事情','誇耀自己看穿父親心思','說明自己記憶力很好'],0,'表面稱自己聰明，實為反諷當年不理解父親關懷。'],
+['形近字辨析','下列「差」字讀音配對何者正確？',['差遣：ㄔㄞ；誤差：ㄔㄚ','差遣：ㄔㄚ；誤差：ㄘ','參差：ㄔㄞ；差異：ㄘ','差異：ㄔㄞ；出差：ㄘ'],0,'差遣的差讀ㄔㄞ；誤差的差讀ㄔㄚ；參差讀ㄘ。'],
+['細節推論','父親攀爬月臺時「兩手攀著上面，兩腳再向上縮」，作者詳寫動作的作用是？',['把父親跨越障礙的吃力具體化，使關愛更有感染力','交代月臺的工程構造','證明父親平日經常運動','凸顯作者對車站景物的熟悉'],0,'連續動作描寫讓讀者看見父親行動不便仍努力為兒子買橘子。'],
+['詞義辨析','「狼藉」與「籍」字形相近，下列解釋正確的是？',['狼藉指散亂不整；典籍的籍指書籍','狼籍指整齊排列；典藉指借用','狼藉指借錢；典籍指凌亂','兩詞都指書本散落'],0,'狼藉的藉是散亂義；典籍的籍指書籍。'],
+['敘事結構','本文以現在的感受引出往事，末段又回到現在讀父親來信，這樣安排的效果是？',['讓昔日背影與今日思念相互映照，深化追悔與思念','把事件順序完全打亂，製造懸疑','只為補充車站的地理背景','讓讀者誤以為父親已在車站等候'],0,'首尾回到當下，使回憶中的父愛與現在的思念形成照應。'],
+['用字辨析','「舉箸」中的「箸」指什麼？',['筷子','書信','行李','短褂'],0,'箸是筷子，舉箸就是拿起筷子。'],
+['人物心境','作者看見父親買橘子的背影而流淚，隨即拭淚，最合理的推論是？',['受到父愛感動，也不願讓父親察覺自己的情緒','覺得父親動作滑稽而忍笑','擔心橘子被別人拿走','因旅程太長而疲倦'],0,'流淚顯示感動，趕緊拭乾則含有克制、不想讓父親看見的心情。'],
+['文意統整','若以「父親的愛」作為本文主旨，哪一種證據最有說服力？',['從送行、囑託到買橘子的具體行動串連觀察','只根據父親穿著黑布大馬褂','只看作者離開南京的時間','只依作者說自己聰明'],0,'本文透過具體事件與動作描寫呈現含蓄深厚的父愛。'],
+['語意辨析','「禍不單行」放在文章開頭背景中，主要說明？',['家中接連遭遇不幸，為送行事件鋪陳困境','父親一路陪作者遇到許多危險','作者連續犯下多個錯誤','祖母和父親一起搬到南京'],0,'祖母過世、父親失業等困境構成故事背景，也襯托父親送行不易。'],
+['近義辨析','「妥帖」用於形容事情安排，最接近下列何者？',['妥當合宜','散亂不整','遲疑不決','過分迂曲'],0,'妥帖指恰當、妥當。'],
+['多義字','「店鋪」的「鋪」讀音與「鋪開行李」的「鋪」依序是？',['ㄆㄨˋ；ㄆㄨ','ㄆㄨ；ㄆㄨˋ','ㄆㄨˇ；ㄆㄨˋ','ㄆㄨˋ；ㄆㄨˇ'],0,'名詞商店讀ㄆㄨˋ；動詞展開、鋪設讀ㄆㄨ。'],
+['綜合推論','作者成年後重讀父親來信，仍能想起那道背影，最能說明背影已成為？',['父愛記憶的具體象徵','車站路線的標記','作者童年旅行的地圖','父親職業身分的證明'],0,'背影承載具體關愛與後來的思念，成為文章情感的象徵。']
+],
+5:[
+['形音辨析','下列「ㄌㄧㄠˊ」字的詞語搭配，何者全都正確？',['潦草、燎原','撩草、潦原','燎草、撩原','潦草、撩原'],0,'潦草指草率；燎原指火勢延燒原野。'],
+['形音義辨析','「鋃鐺入獄」中的鋃鐺與「鐐銬」的鐐銬，兩者共同的語意關聯為何？',['都與拘繫、限制行動有關','都指疾病造成的疼痛','都指心情憂鬱','都指長時間學習'],0,'鋃鐺是刑具或拘繫的形象，鐐銬是腳鐐手銬。'],
+['文意推論','標題「心囚」把心比作囚室，最重要的不是描述真正的監獄，而是？',['提醒人可能被內在恐懼、偏見或消極想法困住','說明作者曾經犯罪入獄','比較監獄和醫院的管理','描寫一座古老建築'],0,'標題由囚禁的具體形象轉為心靈受限的譬喻。'],
+['形近字辨析','下列字詞配對何者全部正確？',['禁錮：限制；痼疾：難治的舊病；乾涸：水乾枯','禁固：限制；痼疾：短暫感冒；乾涸：水暴漲','禁錮：贈送；痼疾：快樂；乾涸：濕潤','禁錮：監牢；痼疾：乾燥；乾涸：疾病'],0,'錮有固定、限制義；痼疾是難治的疾病；乾涸指水源枯竭。'],
+['語意比較','「頹廢」與「頹喪」都含消沉之意，何者較能描述意志消沉、生活失去積極作為？',['頹廢','頹喪','兩者只能形容外表','兩者都只形容水源枯竭'],0,'頹廢常指精神意志消沉、生活態度消極；頹喪偏重情緒低落。'],
+['形音辨析','下列讀音配對何者正確？',['沉溺：ㄋㄧˋ；剝奪：ㄅㄛ','沉溺：ㄖㄨˋ；剝奪：ㄅㄠ','沉溺：ㄋㄧㄠˋ；剝奪：ㄆㄛ','沉溺：ㄌㄧˋ；剝奪：ㄅㄛˊ'],0,'沉溺的溺讀ㄋㄧˋ；剝奪的剝在此讀ㄅㄛ。'],
+['詞義推論','作者談「身體受限制」與「心靈是否自由」，最能推出哪一項觀點？',['外在困難不必然完全決定一個人的內在選擇','身體健康的人一定沒有煩惱','只要忽略困難就能解決問題','所有限制都由別人造成'],0,'文章藉身體處境反思心靈自由，並未把外在條件等同於內心狀態。'],
+['詞語辨析','「轄制」與「制約」的共同點最接近？',['對行動或發展形成限制','給予自由與鼓勵','快速治癒疾病','失去記憶'],0,'兩詞皆含管束、限制之意，但使用語境略有不同。'],
+['語境選字','「星火＿＿原」和「字跡＿＿草」依序應填？',['燎；潦','潦；燎','撩；潦','燎；撩'],0,'星火燎原；字跡潦草。兩字同音近形，須依詞義分辨。'],
+['文意判斷','若把身體不便者一律看成需要別人替他做決定，依本課精神，問題在於？',['把差異簡化成標籤，忽略對方自身意願與能力','對方一定不能參與生活','身體狀況和心靈完全相同','幫助別人本身就是錯誤'],0,'尊重處境包含理解需求，不應預設或剝奪對方主體性。'],
+['修辭判讀','題目「心囚」中的「囚」由具體監禁延伸到內心受困，主要運用？',['譬喻','排比','摹聲','頂真'],0,'以囚禁比喻心靈受困，是譬喻。'],
+['詞義推論','「囹圄」和「禁錮」的差別，何者正確？',['囹圄是監牢；禁錮是限制自由的動作或狀態','囹圄是疾病；禁錮是治療','囹圄是憂鬱；禁錮是灰心','兩者都是形容走路不穩'],0,'囹圄是名詞，指監牢；禁錮指限制、束縛。'],
+['作者觀點','依課文探討生命經驗的方式，哪一種讀法最恰當？',['從具體處境理解作者如何思考限制，再辨認其對心靈自由的觀點','只背作者疾病名稱即可掌握主旨','把所有比喻都解作字面上的監獄','以自己的經驗取代文本證據'],0,'閱讀須連結經驗與觀點，但仍以文本線索支持推論。'],
+['形近字辨析','「枷鎖」與「鐐銬」在文中可共同象徵什麼？',['束縛與限制','禮物與祝福','休息與放鬆','明亮與希望'],0,'兩者字面是刑具，在本文脈絡可延伸象徵受困、束縛。'],
+['綜合判讀','下列哪句最符合本課「突破心靈枷鎖」的想法？',['雖有難處，仍理解自己的選擇並尋找可行的方法','遇到限制就認定人生沒有改變可能','用同情代替傾聽對方真正需要','把不熟悉的人一概視為無法自理'],0,'本課鼓勵面對限制、珍惜心靈自由，也尊重每個人的處境。']
+]};
+lessons[0].qs.push(
+['進階賞析','詩中同時安排蟬聲、蛙鳴與繁星，最能造成哪種閱讀效果？',['讀者同時感受夏夜的聲音與景象','只強調夜晚完全寂靜','交代農人工作的先後順序','說明天氣即將轉冷'],0,'聽覺與視覺交錯，讓夏夜畫面更有層次與生氣。'],
+['語意推論','若把夏夜景物寫得像在活動、交談，最可能運用哪種表現手法？',['擬人','誇飾','設問','借代'],0,'賦予景物人的動作或情態，就是擬人。'],
+['綜合判讀','下列哪組線索最能支持「夏夜既寧靜又有生氣」？',['涼風吹拂、蟲鳴蛙聲交織','烈日曝曬、雷雨交加','車聲轟隆、人群喧鬧','霜雪覆地、寒風刺骨'],0,'微風帶來安適感，蟲鳴蛙聲又讓夜晚充滿生命氣息。']);
+lessons[1].qs.push(
+['進階推論','文章以「無心」修飾錯誤，最合理的閱讀理解是？',['雖非故意，仍須面對影響並設法補救','只要不是故意，就不必理會結果','犯錯後應立刻隱瞞原因','無心代表事情沒有造成影響'],0,'非故意可說明動機，卻不能抹去結果；承認並補救才是負責的態度。'],
+['詞義辨析','「始料未及」與「出乎意料」共同強調什麼？',['事情超過原先的預想','事情完全照計畫發生','事前已經反覆確認','結果由自己安排'],0,'兩者都指出實際發展超出原來預期。'],
+['情境判斷','發現誤會造成同學困擾，哪一個處理順序最恰當？',['先承認疏忽、了解影響，再道歉並彌補','先辯解、責怪同學，再離開現場','假裝沒發生，等別人忘記','只說不是故意，不必再處理'],0,'負責的做法是承認、理解影響並採取補救行動。']);
+lessons[2].qs.push(
+['進階推論','母親的教誨被作者長久記得，最可能是因為？',['教導透過生活事件留下深刻影響','作者只記得母親的外貌','每句話都要求立即背誦','文章主要介紹家庭用品'],0,'生活經驗使教誨具體，並影響作者往後的選擇。'],
+['詞義辨析','「體恤他人」最適合用在哪種情境？',['理解同學遇到困難並給予協助','只要求同學照自己的方法做','看到別人犯錯便立刻嘲笑','不理會別人的需要'],0,'體恤是體諒他人的處境，並非只要求對方服從。'],
+['綜合判讀','一個人能自律、守信，也願意反省，最能看出哪種特質？',['重視品格並願意改進','只在意別人的評價','遇到責任便推給他人','凡事都不需要提醒'],0,'自律、守信與反省都呼應文章所重視的品格與自我要求。']);
+for(const i of [3,4,5])lessons[i].qs=advancedQs[i];
+
+const KEY='chineseExplorersV1';let state=load(),lesson=0,round=0,qi=0,correct=0,streak=0,best=0,answered=false,activeQuestions=[];const ROUND_NAMES=['第一關｜詞義選擇','第二關｜反向辨字','第三關｜課文挑戰'];
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&Array.isArray(s.done)&&Array.isArray(s.review)){s.rounds=s.rounds||{};return s}}catch(e){}return{done:[],stars:0,review:[],rounds:{}}}
+const $=id=>document.getElementById(id);function persist(){localStorage.setItem(KEY,JSON.stringify(state));renderMap()}
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2200)}
+function renderMap(){$('lessons').innerHTML=lessons.map((l,i)=>{const done=(state.rounds[i]||[]).length;return `<button class="lesson ${i===lesson?'active':''}" data-i="${i}"><span>${l.icon}</span><b>第 ${i+1} 課｜${l.title}</b><small>${done===3?'🏆 三關完成':`已完成 ${done}/3 關 · 每關15題`}</small></button>`}).join('');document.querySelectorAll('.lesson').forEach(b=>b.onclick=()=>{lesson=+b.dataset.i;round=(state.rounds[lesson]||[]).length;begin()});$('roundTabs').innerHTML=ROUND_NAMES.map((name,i)=>`<button class="${i===round?'active':''}" data-round="${i}" ${(i>(state.rounds[lesson]||[]).length)?'disabled':''}>${name} ${(state.rounds[lesson]||[]).includes(i)?'✓':''}</button>`).join('');document.querySelectorAll('[data-round]').forEach(b=>b.onclick=()=>{round=+b.dataset.round;begin()});renderVocab()}
+let vocabLesson=0;function renderVocab(){const unit=vocabBank.find(v=>v.lesson===vocabLesson);$('vocabTabs').innerHTML=vocabBank.map(v=>`<button class="${v.lesson===vocabLesson?'active':''}" data-vocab="${v.lesson}">${v.title}</button>`).join('');document.querySelectorAll('[data-vocab]').forEach(b=>b.onclick=()=>{vocabLesson=+b.dataset.vocab;renderVocab()});$('vocabCount').textContent=`${unit.words.length} 個字詞`; $('vocabGrid').innerHTML=unit.words.map(([word,zhuyin,meaning])=>`<article class="vocabcard"><div class="vocabchar">${esc(word)}</div><div class="vocabzhuyin">${esc(zhuyin)}</div><div class="vocabmeaning">${esc(meaning)}</div></article>`).join('')}
+function makeQuestions(){const unit=vocabBank.find(v=>v.lesson===lesson),source=lessons[lesson].qs;if(round<2&&unit){return unit.words.slice(0,15).map(([word,zhuyin,meaning])=>{const distractors=unit.words.filter(x=>x[0]!==word).sort(()=>Math.random()-.5).slice(0,3),opts=round===0?[meaning,...distractors.map(x=>x[2])]:[word,...distractors.map(x=>x[0])];opts.sort(()=>Math.random()-.5);const answer=round===0?meaning:word;return [round===0?'詞義選擇':'反向辨字',round===0?`「${word}」的意思是？`:`「${meaning}」對應哪個詞語？`,opts,opts.indexOf(answer),`${word}（${zhuyin}）：${meaning}`,word,zhuyin]})}let list=source.slice();if(list.length<15)list=list.concat(source.slice(0,15-list.length));list=list.slice(0,15);return list.slice(0,15)}
+function begin(){vocabLesson=lesson;activeQuestions=makeQuestions();qi=0;correct=0;streak=0;best=0;answered=false;$('play').style.display='block';$('finish').style.display='none';renderMap();showQ()}
+function showQ(){const l=lessons[lesson],q=activeQuestions[qi];answered=false;$('lessonTag').textContent=`第 ${lesson+1} 課｜${l.title} · ${ROUND_NAMES[round]}`;$('qnum').textContent=`第 ${qi+1} / ${activeQuestions.length} 題`;$('bar').style.width=(qi/activeQuestions.length*100)+'%';$('type').textContent=q[0];$('question').textContent=q[1];$('target').innerHTML=q[0]==='注音寫國字'?`<div class="target" aria-label="大字與注音，請在紙上寫出國字"><div class="glyph">${q[5]}</div><div class="zhuyin">${q[6]}</div><div class="prompt">先在紙上寫下國字，再選答案核對</div></div>`:'';$('answers').innerHTML=q[2].map((a,i)=>`<button class="ans" data-a="${i}">${String.fromCharCode(65+i)}. ${a}</button>`).join('');$('feedback').textContent='';$('next').disabled=true;$('next').textContent=qi===activeQuestions.length-1?'本關結算 🏅':'下一題 →';$('hint').disabled=false;document.querySelectorAll('.ans').forEach(b=>b.onclick=()=>choose(+b.dataset.a));$('intro').textContent=l.desc;$('ruleTitle').textContent=ROUND_NAMES[round];$('ruleText').textContent='本關共15題。答錯請重新選擇；答對才能進入下一題。三關依序練詞義、反向辨字與課文進階挑戰。';renderReview()}
+function choose(n){if(answered)return;const q=activeQuestions[qi],bs=[...document.querySelectorAll('.ans')];if(n===q[3]){answered=true;bs.forEach(b=>b.disabled=true);correct++;streak++;best=Math.max(best,streak);bs[n].classList.add('correct');$('feedback').textContent='🌟 答對了！'+q[4];$('next').disabled=false;$('hint').disabled=true}else{streak=0;bs[n].classList.add('wrong');$('feedback').textContent='再選一次，答對才能前進。';if(!q.missed){q.missed=true;state.review.unshift({lesson:lessons[lesson].title,question:q[1],picked:q[2][n],answer:q[2][q[3]],explain:q[4]});state.review=state.review.slice(0,12);persist();renderReview()}}}
+function finish(){const total=activeQuestions.length,stars=correct===15?3:correct>=13?2:1;$('play').style.display='none';$('finish').style.display='block';$('bar').style.width='100%';$('score').textContent=`${correct}/${total}`;$('stars').textContent='⭐'.repeat(stars);$('streak').textContent=best;state.rounds[lesson]=state.rounds[lesson]||[];if(!state.rounds[lesson].includes(round)){state.rounds[lesson].push(round);state.rounds[lesson].sort((a,b)=>a-b);state.stars+=stars;persist()}const allDone=state.rounds[lesson].length===3;if(allDone&&!state.done.includes(lesson)){state.done.push(lesson);persist()}$('medal').textContent=allDone?'🏆':'🏅';$('finishTitle').textContent=allDone?'本課三關完成！':'闖關成功！';$('finishText').textContent=`${ROUND_NAMES[round]}答對 ${correct} 題；錯題都已答對。${allDone?'本課已全數通關！':'下一關已解鎖，繼續挑戰吧！'}`}
+function renderReview(){$('review').innerHTML=state.review.length?state.review.map(r=>`<div class="reviewitem"><strong>${r.lesson}｜${esc(r.question)}</strong><br>你的答案：${esc(r.picked)}<br>正確答案：${esc(r.answer)}<br>${esc(r.explain)}</div>`).join(''):'<div class="muted">答錯後會在這裡留下題目與說明。</div>'}function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('next').onclick=()=>{if(!answered)return;if(qi<activeQuestions.length-1){qi++;showQ()}else finish()};$('hint').onclick=()=>{const q=activeQuestions[qi];$('feedback').textContent='💡 提示：先讀清楚題幹，再回想課文語境與字義。';$('hint').disabled=true};$('again').onclick=begin;persist();begin();
+</script></body></html>
