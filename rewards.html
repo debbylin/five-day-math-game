@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#bce8ff"><title>星星存摺｜小胖胖第一名</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap');
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#c8edff,#fff7df);font-family:'Noto Sans TC',sans-serif;color:#183b59;min-height:100vh}.wrap{max-width:850px;margin:auto;padding:18px 14px 40px}.nav a{color:#32678b;font-weight:800;text-decoration:none}.hero,.panel{background:#ffffffdf;border:1px solid #d8e8f0;border-radius:22px;padding:18px;margin-top:14px}.hero{display:flex;align-items:center;justify-content:space-between;gap:12px}.hero h1{font-size:clamp(28px,6vw,40px);margin:0 0 8px}.hero p{margin:0;line-height:1.7;color:#627d91}.mascot{font-size:58px}.score{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}.stat{background:white;border:1px solid #e2edf2;border-radius:17px;padding:13px;text-align:center}.stat b{display:block;font-size:27px;color:#d68b19}.stat span{font-size:12px;color:#627d91}.sectiontitle{margin:0 0 10px;font-size:20px}.task{display:flex;align-items:flex-start;gap:11px;padding:13px 0;border-bottom:1px solid #e8eef0}.task:last-child{border:0}.task input{width:23px;height:23px;accent-color:#27a66b;flex-shrink:0;margin-top:3px}.task b{display:block}.task small{display:block;color:#627d91;line-height:1.6;margin-top:3px}.points{margin-left:auto;color:#b87912;font-weight:900;white-space:nowrap}.btn{border:0;border-radius:12px;background:#ffd36e;color:#5a421a;font:900 15px inherit;padding:12px 15px;cursor:pointer}.btn:disabled{opacity:.45;cursor:not-allowed}.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.muted{color:#627d91;font-size:13px;line-height:1.7}.rewards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.reward{border:2px solid #e3edf1;background:white;border-radius:17px;padding:14px;display:flex;flex-direction:column;gap:8px}.reward .emoji{font-size:30px}.reward h3{margin:0;font-size:16px}.reward p{margin:0;color:#627d91;font-size:13px;line-height:1.6;flex:1}.cost{font-weight:900;color:#c28116}.week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.day{background:#fff;border-radius:10px;padding:9px 3px;text-align:center;font-size:12px;border:1px solid #e1ebef}.day b{display:block;font-size:15px;margin-bottom:3px}.callout{background:#fff5d9;border-radius:14px;padding:12px;line-height:1.7;font-size:14px}.history{font-size:13px;line-height:1.8;color:#627d91;max-height:150px;overflow:auto}.toast{margin-top:12px;font-weight:800;color:#22764b;min-height:22px}@media(max-width:620px){.wrap{padding:13px 11px 30px}.rewards{grid-template-columns:1fr}.reward{display:grid;grid-template-columns:42px 1fr;column-gap:8px}.reward .emoji{grid-row:span 3}.reward button{grid-column:2}.score{gap:6px}.stat{padding:10px 4px}.stat b{font-size:23px}.week{gap:3px}.day{font-size:10px;padding:7px 1px}.hero{padding:15px}.mascot{font-size:43px}}
+</style></head>
+<body><main class="wrap">
+<div class="nav"><a href="index.html">← 回到小胖胖第一名首頁</a></div>
+<section class="hero"><div><h1>⭐ 星星存摺</h1><p>不是要考滿分，而是每天比昨天進步一點點！<br>完成任務拿星星，累積星星兌換約定好的遊戲時間。</p></div><div class="mascot" aria-hidden="true">🤖🌟</div></section>
+<section class="score">
+<div class="stat"><b id="total">0</b><span>目前可用星星</span></div>
+<div class="stat"><b id="today">0</b><span>今天已拿星星</span></div>
+<div class="stat"><b id="streak">0</b><span>連續學習天數</span></div>
+</section>
+<section class="panel"><h2 class="sectiontitle">🎯 今天的任務</h2><p class="muted">每天最多 7 顆星。先做自己約定的份量，完成後再勾選；不要為了星星熬夜。</p>
+<label class="task"><input type="checkbox" data-id="practice" data-points="2"><span><b>完成今日練習</b><small>完成約定的 10 題；不要求全部答對。</small></span><span class="points">+2 ★</span></label>
+<label class="task"><input type="checkbox" data-id="correct" data-points="2"><span><b>訂正今天的錯題</b><small>找出錯在哪裡，再自己算對至少 2 題。</small></span><span class="points">+2 ★</span></label>
+<label class="task"><input type="checkbox" data-id="exam" data-points="2"><span><b>第一次段考複習</b><small>完成 3～5 題段考錯題或相似題；能說出解法。</small></span><span class="points">+2 ★</span></label>
+<label class="task"><input type="checkbox" data-id="challenge" data-points="1"><span><b>勇敢挑戰一題</b><small>試做一道有點難的題目，願意思考就算完成。</small></span><span class="points">+1 ★</span></label>
+<div class="btnrow"><button class="btn" id="save">儲存今天任務</button><button class="btn" id="resetDay" style="background:#eaf3f7">清除今天勾選</button></div><div class="toast" id="toast" aria-live="polite"></div></section>
+<section class="panel"><h2 class="sectiontitle">🎮 星星兌換區</h2><p class="muted">兌換後請和家長確認時間，並用平板／手機計時器。星星不兌換現金，也不因為考試失常被扣掉。</p>
+<div class="rewards">
+<div class="reward"><div class="emoji">🕹️</div><h3>小小放鬆</h3><p>多一次約定好的遊戲時間，適合當週小目標。</p><div class="cost">30 顆星｜15 分鐘</div><button class="btn redeem" data-cost="30" data-name="小小放鬆（15 分鐘）">兌換</button></div>
+<div class="reward"><div class="emoji">🎮</div><h3>遊戲加碼</h3><p>完成一週任務後，選喜歡的遊戲或 3C 活動。</p><div class="cost">60 顆星｜30 分鐘</div><button class="btn redeem" data-cost="60" data-name="遊戲加碼（30 分鐘）">兌換</button></div>
+<div class="reward"><div class="emoji">🏆</div><h3>週末自由選</h3><p>和家長一起選一項不花錢的活動，也可選約定好的 3C 時間。</p><div class="cost">100 顆星｜45 分鐘</div><button class="btn redeem" data-cost="100" data-name="週末自由選（45 分鐘）">兌換</button></div>
+</div><p class="muted">建議先把每日原本的休閒時間照常保留；兌換的是額外、事先約定的時間。使用時間以家長同意及作息為準。</p></section>
+<section class="panel"><h2 class="sectiontitle">📅 一週任務節奏</h2><div class="week">
+<div class="day"><b>一</b>新進度</div><div class="day"><b>二</b>訂錯題</div><div class="day"><b>三</b>混合練習</div><div class="day"><b>四</b>段考舊題</div><div class="day"><b>五</b>本週回顧</div><div class="day"><b>六</b>小測驗</div><div class="day"><b>日</b>休息／補做</div>
+</div><div class="callout" style="margin-top:12px"><b>第一次段考錯題加強：</b>每週至少選 5 題舊錯題。先遮住答案自己作答，再看詳解；能獨立解對的題目打勾。完成 5 題並講出其中 2 題的解法，可在「今天的任務」勾選「第一次段考複習」取得 2 顆星。每題最多計一次，避免重複刷同一題拿星。</div></section>
+<section class="panel"><h2 class="sectiontitle">🧾 最近的紀錄</h2><div class="history" id="history">完成任務或兌換獎勵後，紀錄會顯示在這裡。</div><div class="btnrow"><button class="btn" id="export" style="background:#eaf3f7">匯出紀錄</button><button class="btn" id="clearAll" style="background:#ffe7e2">重設全部資料</button></div><p class="muted">資料只存在這台裝置的這個瀏覽器。若清除瀏覽器資料或換裝置，星星紀錄可能不會保留；可定期匯出紀錄備份。</p></section>
+</main>
+<script>
+(function(){
+const KEY='xiaopang_rewards_v1';
+const $=id=>document.getElementById(id);
+const todayKey=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const fresh=()=>({total:0,days:{},history:[]});
+let data;
+try{data=JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){data=fresh()}
+if(!data.days)data.days={};if(!data.history)data.history=[];
+function save(){localStorage.setItem(KEY,JSON.stringify(data));render()}
+function dayData(){const k=todayKey();if(!data.days[k])data.days[k]={checked:[],awarded:0};return data.days[k]}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){
+$('total').textContent=data.total;
+const d=dayData();$('today').textContent=d.awarded||0;
+document.querySelectorAll('[data-id]').forEach(el=>{el.checked=d.checked.includes(el.dataset.id)});
+let streak=0;let date=new Date();
+for(let i=0;i<366;i++){const k=date.getFullYear()+'-'+String(date.getMonth()+1).padStart(2,'0')+'-'+String(date.getDate()).padStart(2,'0');if(data.days[k]&&data.days[k].awarded>0){streak++;date.setDate(date.getDate()-1)}else break}
+$('streak').textContent=streak;
+$('history').innerHTML=data.history.length?data.history.slice().reverse().slice(0,15).map(x=>'• '+esc(x)+'<br>').join(''):'完成任務或兌換獎勵後，紀錄會顯示在這裡。';
+document.querySelectorAll('.redeem').forEach(b=>b.disabled=data.total<Number(b.dataset.cost));
+}
+function toast(t){$('toast').textContent=t}
+$('save').addEventListener('click',()=>{
+const d=dayData();const before=d.awarded||0;
+const checked=[...document.querySelectorAll('[data-id]:checked')].map(el=>el.dataset.id);
+const points=[...document.querySelectorAll('[data-id]:checked')].reduce((sum,el)=>sum+Number(el.dataset.points),0);
+if(points>7){toast('今天任務最多 7 顆星喔！');return}
+if(points<before){toast('已儲存勾選；已取得的星星不會因取消勾選而扣回。');return}
+const gained=points-before;
+d.checked=checked;d.awarded=points;data.total+=gained;
+if(gained>0)data.history.push(todayKey()+'：完成任務，新增 '+gained+' 顆星');
+save();toast(gained?'太棒了！新增 '+gained+' 顆星 ⭐':'今天任務已儲存！');
+});
+$('resetDay').addEventListener('click',()=>{if(!confirm('只清除今天的勾選？已取得的星星會保留。'))return;dayData().checked=[];save();toast('已清除今天勾選，已拿到的星星保留。')});
+document.querySelectorAll('.redeem').forEach(b=>b.addEventListener('click',()=>{
+const cost=Number(b.dataset.cost);if(data.total<cost)return;
+if(!confirm('要兌換「'+b.dataset.name+'」並使用 '+cost+' 顆星嗎？請先和家長確認。'))return;
+data.total-=cost;data.history.push(todayKey()+'：兌換 '+b.dataset.name+'（-'+cost+' 顆星）');save();toast('兌換成功！記得和家長確認時間。');
+}));
+$('export').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='小胖胖星星存摺-'+todayKey()+'.json';a.click();URL.revokeObjectURL(url);toast('紀錄已匯出。')});
+$('clearAll').addEventListener('click',()=>{if(!confirm('確定重設所有星星、任務與兌換紀錄？這個動作無法復原。'))return;data=fresh();save();toast('已重設全部資料。')});
+render();
+})();
+</script></body></html>
