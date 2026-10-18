@@ -10,7 +10,7 @@
 <body><main class="wrap">
 <div class="nav"><a href="index.html">← 回到小胖胖第一名首頁</a></div>
 <section class="hero"><div><h1>⭐ 星星存摺</h1><p>不是要考滿分，而是每天比昨天進步一點點！<br>完成任務拿星星，累積星星兌換約定好的遊戲時間。</p></div><div class="mascot" aria-hidden="true">🤖🌟</div></section>
-<section class="score">
+<section class="panel"><h2 class="sectiontitle">📘 遊戲規則，開始前先看</h2><div class="callout"><b>規則 1｜每天任務最多 7 顆星</b><br>完成今日練習 2 顆、訂正錯題 2 顆、第一次段考複習 2 顆、勇敢挑戰 1 顆。每個任務每天最多領一次，不能只勾選但沒做。</div><div class="callout" style="margin-top:9px"><b>規則 2｜星星不會因為考不好被扣掉</b><br>完成比答對更重要；訂正後能說出錯因，就是進步。星星只會在兌換獎勵時扣除。</div><div class="callout" style="margin-top:9px"><b>規則 3｜兌換前先和家長確認</b><br>30 顆＝15 分鐘、60 顆＝30 分鐘、100 顆＝45 分鐘。兌換成功後用計時器，時間到就收尾；不影響原本約定的休閒時間。</div><div class="callout" style="margin-top:9px"><b>規則 4｜每週回顧一次</b><br>星期日和家長一起看本週完成了什麼、哪個觀念還不熟，再選下週要加強的 1～2 個目標。星期日可以休息，不需要每天都做到滿分。</div></section><section class="score">
 <div class="stat"><b id="total">0</b><span>目前可用星星</span></div>
 <div class="stat"><b id="today">0</b><span>今天已拿星星</span></div>
 <div class="stat"><b id="streak">0</b><span>連續學習天數</span></div>
@@ -18,7 +18,7 @@
 <section class="panel"><h2 class="sectiontitle">🎯 今天的任務</h2><p class="muted">每天最多 7 顆星。先做自己約定的份量，完成後再勾選；不要為了星星熬夜。</p>
 <label class="task"><input type="checkbox" data-id="practice" data-points="2"><span><b>完成今日練習</b><small>完成約定的 10 題；不要求全部答對。</small></span><span class="points">+2 ★</span></label>
 <label class="task"><input type="checkbox" data-id="correct" data-points="2"><span><b>訂正今天的錯題</b><small>找出錯在哪裡，再自己算對至少 2 題。</small></span><span class="points">+2 ★</span></label>
-<label class="task"><input type="checkbox" data-id="exam" data-points="2"><span><b>第一次段考複習</b><small>完成 3～5 題段考錯題或相似題；能說出解法。</small></span><span class="points">+2 ★</span></label>
+<label class="task"><input type="checkbox" data-id="exam" data-points="2"><span><b>第一次段考複習</b><small>完成 5 題段考錯題或相似題，並能說出其中 2 題的解法。</small></span><span class="points">+2 ★</span></label>
 <label class="task"><input type="checkbox" data-id="challenge" data-points="1"><span><b>勇敢挑戰一題</b><small>試做一道有點難的題目，願意思考就算完成。</small></span><span class="points">+1 ★</span></label>
 <div class="btnrow"><button class="btn" id="save">儲存今天任務</button><button class="btn" id="resetDay" style="background:#eaf3f7">清除今天勾選</button></div><div class="toast" id="toast" aria-live="polite"></div></section>
 <section class="panel"><h2 class="sectiontitle">🎮 星星兌換區</h2><p class="muted">兌換後請和家長確認時間，並用平板／手機計時器。星星不兌換現金，也不因為考試失常被扣掉。</p>
@@ -29,7 +29,7 @@
 </div><p class="muted">建議先把每日原本的休閒時間照常保留；兌換的是額外、事先約定的時間。使用時間以家長同意及作息為準。</p></section>
 <section class="panel"><h2 class="sectiontitle">📅 一週任務節奏</h2><div class="week">
 <div class="day"><b>一</b>新進度</div><div class="day"><b>二</b>訂錯題</div><div class="day"><b>三</b>混合練習</div><div class="day"><b>四</b>段考舊題</div><div class="day"><b>五</b>本週回顧</div><div class="day"><b>六</b>小測驗</div><div class="day"><b>日</b>休息／補做</div>
-</div><div class="callout" style="margin-top:12px"><b>第一次段考錯題加強：</b>每週至少選 5 題舊錯題。先遮住答案自己作答，再看詳解；能獨立解對的題目打勾。完成 5 題並講出其中 2 題的解法，可在「今天的任務」勾選「第一次段考複習」取得 2 顆星。每題最多計一次，避免重複刷同一題拿星。</div></section>
+</div><div class="callout" style="margin-top:12px"><b>第一次段考錯題加強：</b>每週至少選 5 題舊錯題。①先遮住答案自己作答；②對照詳解並訂正；③從中挑 2 題，用自己的話說明解法。三步完成後，才勾選「第一次段考複習」取得 2 顆星。每天最多領一次，不重複刷同一批題目領星。</div></section>
 <section class="panel"><h2 class="sectiontitle">🧾 最近的紀錄</h2><div class="history" id="history">完成任務或兌換獎勵後，紀錄會顯示在這裡。</div><div class="btnrow"><button class="btn" id="export" style="background:#eaf3f7">匯出紀錄</button><button class="btn" id="clearAll" style="background:#ffe7e2">重設全部資料</button></div><p class="muted">資料只存在這台裝置的這個瀏覽器。若清除瀏覽器資料或換裝置，星星紀錄可能不會保留；可定期匯出紀錄備份。</p></section>
 </main>
 <script>
