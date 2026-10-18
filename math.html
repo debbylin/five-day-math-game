@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17354a">
+<title>數字彈弓隊 2.0｜五日數學挑戰</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap');
+:root{--ink:#17354a;--muted:#607d8b;--bg:#eaf6f0;--card:#fffdf6;--gold:#ffbd50;--green:#4fba7a;--red:#e87870;--line:#d9e8df;--blue:#dceff5}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#dff3f0,#f9f1d9);color:var(--ink);font-family:"Noto Sans TC",sans-serif;min-height:100vh}.wrap{max-width:1050px;margin:auto;padding:18px 14px 44px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-weight:900;font-size:18px}.brand span{display:inline-grid;place-items:center;width:40px;height:40px;background:var(--gold);border-radius:13px;margin-right:8px}.stats{display:flex;gap:8px}.pill{background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 12px;font-weight:900;font-size:13px}.tools{display:flex;gap:8px;justify-content:flex-end;margin:10px 0}.tools button,.smallbtn{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 12px;font-weight:700;color:var(--ink);cursor:pointer}.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:12px;padding:20px 0}.eyebrow{font-size:12px;color:#c26d3b;font-weight:900;letter-spacing:.08em}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.12;margin:9px 0}.hero p{line-height:1.7;color:var(--muted);margin:0}.scene{height:145px;position:relative;border-radius:24px;background:linear-gradient(145deg,#d8f0f3,#fff2d1);overflow:hidden;display:grid;place-items:center;font-size:65px}.scene:after{content:"";position:absolute;bottom:-35px;left:-5%;width:110%;height:90px;background:#a7d9a7;border-radius:50%}.scene span{z-index:1;filter:drop-shadow(0 5px 2px #2d6b4840)}.map,.panel{background:#ffffffd9;border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 10px 28px #22556b12}.maphead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 2px 12px}.maphead strong{font-size:17px}.muted{font-size:12px;color:var(--muted)}.days{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.day{border:2px solid transparent;background:#fff;border-radius:16px;padding:12px 9px;text-align:left;min-height:112px;color:var(--ink);cursor:pointer;box-shadow:0 3px 0 #dfe9df}.day:disabled{opacity:.48;cursor:not-allowed}.day.active{border-color:var(--gold);background:#fff8e8}.day.done{background:#e5f7e8}.day .dnum{font-size:11px;font-weight:900;color:var(--muted)}.day .ico{font-size:24px;display:block;margin:5px 0}.day b{font-size:13px}.day .stars{color:#d68b19;font-size:12px;margin-top:5px}.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin-top:14px}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:8px}.tag{background:#e6f5ec;color:#34734f;border-radius:99px;padding:6px 10px;font-size:12px;font-weight:900}.qnum{font-size:12px;color:var(--muted);font-weight:800}.track{height:8px;background:#eaf0e8;border-radius:9px;overflow:hidden;margin:13px 0 18px}.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,#56bf80,#ffc252);transition:width .2s}.difficulty{display:inline-block;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:900;background:#e8f1ff;color:#355e8d;margin-bottom:9px}.question{font-size:21px;line-height:1.55;margin:0 0 15px;font-weight:900;white-space:pre-line}.answers{display:grid;grid-template-columns:1fr 1fr;gap:9px}.ans{border:2px solid #e0eae4;background:#fff;border-radius:13px;padding:12px;text-align:left;font:700 15px inherit;color:var(--ink);cursor:pointer;min-height:50px}.ans:hover:not(:disabled){border-color:#77c994;background:#f6fff7}.ans:disabled{cursor:default}.ans.correct{border-color:#4eb777;background:#e5f7e9}.ans.wrong{border-color:#e87870;background:#fff0ee}.feedback{margin:13px 0;min-height:45px;color:#557386;font-size:14px;line-height:1.7;white-space:pre-line}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:12px 15px;font:900 14px inherit;cursor:pointer}.primary{background:var(--gold);color:#5a3d18;box-shadow:0 3px #e5a044}.soft{background:#eaf5ed;color:#376e50}.btn:disabled{opacity:.4;cursor:not-allowed}.side h3{font-size:17px;margin:2px 0 8px}.side p{font-size:14px;line-height:1.7;color:var(--muted);margin:0}.rule{padding:13px;border-radius:14px;background:#f0f8f3;margin:12px 0}.rule b{display:block;margin-bottom:5px}.review{border-top:1px solid var(--line);margin-top:13px;padding-top:12px}.reviewlist{max-height:250px;overflow:auto}.reviewitem{font-size:13px;line-height:1.6;padding:9px 0;border-bottom:1px solid #eaf0e8}.reviewitem strong{color:#c45f4e}.finish{display:none;text-align:center;padding:18px 8px}.finish .medal{font-size:52px}.finish h2{margin:5px 0}.finish p{color:var(--muted);line-height:1.8}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.resultbox{background:#f0f8f3;border-radius:13px;padding:12px}.resultbox b{font-size:22px;display:block}.toast{display:none;position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#17354a;color:white;border-radius:12px;padding:12px 17px;z-index:5;max-width:90%;box-shadow:0 8px 25px #17354a33}.toast.show{display:block}.reset{display:block;margin:18px auto 0;border:0;background:none;text-decoration:underline;color:#69858c;cursor:pointer;font:700 12px inherit}@media(max-width:760px){.hero{grid-template-columns:1fr}.scene{height:105px}.days{grid-template-columns:repeat(2,1fr)}.day:last-child{grid-column:span 2}.layout{grid-template-columns:1fr}.wrap{padding:14px 11px 35px}.question{font-size:19px}.answers{grid-template-columns:1fr}.ans{min-height:46px}.hero h1{font-size:36px}}@media(min-width:761px){.ans:nth-child(odd){min-height:61px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand"><span>🎯</span>數字彈弓隊 2.0</div><div class="stats"><div class="pill">⭐ 星星 <span id="stars">0</span></div><div class="pill">🏅 通關 <span id="medals">0</span>/5</div></div></header>
+<div class="tools"><a href="chinese.html" style="display:inline-block;border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 12px;font-weight:700;color:var(--ink);text-decoration:none">📚 國文課程</a><a href="english.html" style="display:inline-block;border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 12px;font-weight:700;color:var(--ink);text-decoration:none">🔤 英文課程</a><button id="export">下載進度備份</button><button id="import">還原進度</button><input id="backup" type="file" accept=".json,application/json" hidden></div>
+<section class="hero"><div><div class="eyebrow">五日挑戰 · 南一版國一數學第一冊 2-1～2-4</div><h1>瞄準弱點，<br>一關一關突破！</h1><p>每關 15 題、四階難度、關卡解鎖與錯題復仇。答錯不是扣分懲罰，而是找到下一個要練會的技能。首次通關需答對至少 10 題，才能解鎖下一關。</p></div><div class="scene"><span>🏹 🎯 🧱</span></div></section>
+<section class="map"><div class="maphead"><strong>🗺️ 闖關地圖</strong><span class="muted">10/15 達標解鎖 · 每關 15 題</span></div><div class="days" id="days"></div></section>
+<section class="layout"><article class="panel"><div class="panelhead"><span class="tag" id="levelTag">DAY 1</span><span class="qnum" id="qnum">第 1 / 15 題</span></div><div class="track"><i id="bar"></i></div><div id="play"><span class="difficulty" id="diff">暖身</span><h2 class="question" id="question"></h2><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="actions"><button class="btn soft" id="hint">💡 提示</button><button class="btn primary" id="next" disabled>下一題 →</button></div></div><div class="finish" id="finish"><div class="medal" id="medalIcon">🏅</div><h2 id="finishTitle">本關結算</h2><p id="finishText"></p><div class="resultgrid"><div class="resultbox"><span class="muted">答對</span><b id="resultCorrect">0/15</b></div><div class="resultbox"><span class="muted">星星</span><b id="resultStars">0</b></div><div class="resultbox"><span class="muted">最高連擊</span><b id="resultStreak">0</b></div></div><button class="btn primary" id="finishBtn">下一關 →</button><button class="btn soft" id="retryWrong" style="margin-top:8px">錯題復仇戰 ↻</button></div></article>
+<aside class="panel side"><h3>📌 本關攻略</h3><p id="intro"></p><div class="rule"><b id="ruleTitle"></b><span id="ruleText" style="font-size:14px;line-height:1.7;color:#557386"></span></div><div class="review"><h3>🔁 錯題倉庫 <span class="muted">（最近 20 題）</span></h3><div class="reviewlist" id="review"></div></div></aside></section>
+<button class="reset" id="reset">重置本機所有進度</button></main><div class="toast" id="toast"></div>
+<script>
+const levels=[
+{title:"因數偵察",icon:"🔍",topic:"2-1 質因數分解｜先備技能",intro:"先掌握因數、倍數、質數和合數，才能把數字正確拆成質因數。這關會從辨識一路升級到反向推理。",rule:"核心規則",text:"因數可以整除目標數；質數剛好有兩個正因數 1 和自己；質因數分解要拆到每一個因數都是質數。",qs:[
+["暖身","24 的正因數中，哪一個不是 24 的因數？",["3","6","8","10"],3,"24÷10 不是整數，所以 10 不是 24 的因數。"],
+["暖身","下列哪一個是 7 的倍數？",["45","49","54","58"],1,"49＝7×7，因此 49 是 7 的倍數。"],
+["暖身","下列哪一個是質數？",["51","53","57","63"],1,"53 只有 1 和 53 兩個正因數；其餘都可被 3 整除。"],
+["暖身","18 的正因數共有幾個？",["4 個","5 個","6 個","8 個"],2,"因數配對是 1×18、2×9、3×6，共 6 個。"],
+["暖身","哪一個不是質數也不是合數？",["1","2","9","11"],0,"1 只有一個正因數，因此既不是質數也不是合數。"],
+["進階","84 的最小質因數是多少？",["2","3","5","7"],0,"84 是偶數，最小質因數就是 2。"],
+["進階","60 的不同質因數有哪些？",["2、3","2、5","2、3、5","3、5、7"],2,"60＝2²×3×5，不同質因數是 2、3、5。"],
+["進階","下列哪個數有奇數個正因數？",["12","18","25","30"],2,"25 的因數為 1、5、25，共 3 個。完全平方數才會有奇數個正因數。"],
+["進階","72 的質因數分解是哪一個？",["2³×3²","2²×3³","2×3×12","8×9×2"],0,"72＝8×9＝2³×3²。質因數只能是質數。"],
+["進階","若 n＝2²×3×5，n 等於多少？",["30","45","60","90"],2,"2²×3×5＝4×15＝60。"],
+["策略","一個數的質因數分解是 2³×3²，它有幾個正因數？",["5","8","12","18"],2,"每個因數可選 2 的指數 0～3、3 的指數 0～2，共 (3+1)(2+1)=12 個。"],
+["策略","哪一個不是 90 的質因數分解？",["2×3²×5","2×3×15","2×3×3×5","3²×10"],1,"2×3×15 雖乘積等於 90，但 15 不是質數；質因數分解必須全是質數。"],
+["策略","一個數同時是 2、3、5 的倍數且大於 100，最小可能是多少？",["105","110","120","150"],2,"最小公倍數是 30；大於 100 的最小 30 倍數是 120。"],
+["高手","若 N＝2ᵃ×3²，且 N＝72，a 應為多少？",["1","2","3","4"],2,"72＝2³×3²，因此 a＝3。"],
+["魔王","36 的正因數共有幾個？已知 36＝2²×3²。",["6","8","9","12"],2,"2 的指數可選 0、1、2；3 的指數也可選 0、1、2，共 3×3＝9 個。"]
+]},
+{title:"質因數拆解",icon:"🧩",topic:"2-1 質因數分解",intro:"本關要求完整分解。答案乘積正確還不夠，每個因數都必須是質數，並留意指數與因數個數。",rule:"標準寫法",text:"例如 72＝2³×3²。相同質因數重複相乘可用指數表示；標準分解中不應留下 4、6、12 等合數。",qs:[
+["暖身","40 的質因數分解是？",["2³×5","2²×10","4×10","1×40"],0,"40＝8×5＝2³×5。"],
+["暖身","56 的質因數分解是？",["2×28","2³×7","4×14","7×8"],1,"56＝8×7＝2³×7，因數全為質數。"],
+["暖身","96 的質因數分解是？",["2⁴×6","2⁵×3","2³×12","3×32"],1,"96＝32×3＝2⁵×3。"],
+["暖身","45 的質因數分解是？",["3²×5","3×15","5×9","1×45"],0,"45＝9×5＝3²×5。"],
+["暖身","下列哪一個是 2⁴×3 的值？",["24","36","48","64"],2,"2⁴＝16，16×3＝48。"],
+["進階","180 的質因數分解是？",["2²×3²×5","2×3²×10","2²×45","6×30"],0,"180＝4×45＝2²×3²×5。"],
+["進階","若 N＝2³×5²，N 等於多少？",["100","200","400","800"],1,"8×25＝200，所以正確答案是 200。"],
+["進階","下列哪個分解雖然乘積正確，但不是質因數分解？",["2²×3×5","2×6×5","2×2×3×5","3×20"],1,"2×6×5 的 6 不是質數，因此未完全分解。"],
+["進階","360 的質因數分解是？",["2³×3²×5","2²×3³×5","2³×3×5²","2×3²×20"],0,"360＝8×45＝2³×3²×5。"],
+["進階","若 2ᵃ×3＝48，a 等於多少？",["2","3","4","5"],2,"48÷3＝16＝2⁴，所以 a＝4。"],
+["策略","一個數的質因數分解是 2²×3×7，這個數是多少？",["42","84","126","168"],1,"4×3×7＝84。"],
+["策略","若 N＝2³×3ᵇ＝216，b 等於多少？",["1","2","3","4"],2,"216÷8＝27＝3³，所以 b＝3。"],
+["策略","最小要乘上多少，才能讓 90 變成完全平方數？",["2","3","5","10"],3,"90＝2×3²×5；要讓所有質因數指數為偶數，乘上 2×5＝10。"],
+["高手","若 N＝2ᵃ×3²×5，且 N＝360，a 是多少？",["1","2","3","4"],2,"360＝2³×3²×5，所以 a＝3。"],
+["魔王","一個數有 12 個正因數，且質因數分解為 2ᵃ×3²。a 應為多少？",["1","2","3","4"],2,"正因數個數為 (a+1)(2+1)=12，因此 a+1=4，a=3。"]
+]},
+{title:"公因數公倍數",icon:"🛡️",topic:"2-2 公因數與公倍數",intro:"這關不只要計算，還要辨認題目是在問「最多分成幾份」還是「何時再次同時發生」。",rule:"選方法的線索",text:"平均分組、最大且不剩下，通常找最大公因數；週期再次重合、最早同時發生，通常找最小公倍數。",qs:[
+["暖身","18 和 24 的最大公因數是？",["2","3","6","12"],2,"18＝2×3²，24＝2³×3，共同部分是 2×3＝6。"],
+["暖身","6 和 8 的最小公倍數是？",["12","18","24","48"],2,"6 的倍數和 8 的倍數最早共同出現於 24。"],
+["暖身","30 和 45 的最大公因數是？",["5","10","15","30"],2,"30＝2×3×5，45＝3²×5，共同部分是 15。"],
+["暖身","4 和 10 的最小公倍數是？",["14","20","30","40"],1,"4 的倍數 4、8、12、16、20；10 的倍數 10、20，因此是 20。"],
+["暖身","要把 24 顆紅球和 36 顆藍球平均分成最多組，每組顏色內數量相同，最多幾組？",["6","8","12","18"],2,"組數必須同時整除 24 和 36，最大公因數是 12。"],
+["進階","48 和 60 的最大公因數是？",["6","12","18","24"],1,"48＝2⁴×3，60＝2²×3×5，共同部分是 2²×3＝12。"],
+["進階","12 和 18 的最小公倍數是？",["24","30","36","72"],2,"12＝2²×3，18＝2×3²，取各質因數最大指數，得到 2²×3²＝36。"],
+["進階","A、B 的最大公因數是 6，最小公倍數是 180，且 A＝30，B 是多少？",["24","36","42","60"],1,"兩數乘積＝最大公因數×最小公倍數，所以 30×B＝6×180，B＝36。"],
+["進階","兩個數的最大公因數是 8，最小公倍數是 96，其中一數是 24，另一數是多少？",["16","24","32","48"],2,"24×B＝8×96＝768，所以 B＝32。"],
+["進階","甲燈每 12 秒閃一次，乙燈每 18 秒閃一次，現在同時閃，幾秒後再次同時閃？",["6 秒","30 秒","36 秒","216 秒"],2,"週期重合找最小公倍數：LCM(12,18)=36。"],
+["策略","有 84 顆糖和 126 張貼紙，要分成最多份數相同的禮包且不剩下，最多幾份？",["14","21","42","63"],2,"求最大公因數：84＝2²×3×7，126＝2×3²×7，共同部分是 42。"],
+["策略","三班公車分別每 15、20 分鐘發車，現在同時發車，至少幾分鐘後再次同時發車？",["35","45","60","300"],2,"找最小公倍數：15＝3×5，20＝2²×5，LCM＝60。"],
+["策略","兩數互質，分別為 14 和 25，它們的最小公倍數是多少？",["39","175","350","625"],2,"互質的兩數，最小公倍數就是乘積：14×25＝350。"],
+["高手","兩數的最大公因數為 12，最小公倍數為 720，其中一數為 144，另一數為多少？",["48","60","72","96"],1,"兩數乘積＝12×720＝8640；另一數＝8640÷144＝60。"],
+["魔王","有 96 個餅乾和 144 瓶飲料，要組成內容完全相同且數量最多的禮包，最多幾包？每包有幾個餅乾和幾瓶飲料？",["24 包；餅乾 4、飲料 6","48 包；餅乾 2、飲料 3","12 包；餅乾 8、飲料 12","36 包；餅乾不整除"],1,"最大公因數 gcd(96,144)=48，所以最多 48 包，每包 2 個餅乾、3 瓶飲料。正確答案是 B。"]
+]},
+{title:"分數連鎖戰",icon:"🍕",topic:"2-3 分數的四則運算",intro:"分數關卡從約分、通分進入四則混合。每一步都要注意符號、倒數與運算順序。",rule:"四則運算提醒",text:"加減先通分；乘法分子乘分子、分母乘分母；除以分數改成乘以它的倒數；有括號先算括號。",qs:[
+["暖身","1/3＋1/6＝？",["2/9","1/2","2/6","1/3"],1,"通分成 2/6＋1/6＝3/6＝1/2。"],
+["暖身","3/4－1/8＝？",["2/4","1/8","5/8","3/8"],2,"3/4＝6/8，所以 6/8－1/8＝5/8。"],
+["暖身","2/3×3/5＝？",["2/5","5/8","6/8","1/5"],0,"分子相乘、分母相乘：6/15，約分為 2/5。"],
+["暖身","3/4÷1/2＝？",["3/8","2/3","3/2","1/4"],2,"除以 1/2 等於乘以 2，3/4×2＝3/2。"],
+["暖身","2/5＋1/10＝？",["3/15","1/2","3/10","1/5"],1,"2/5＝4/10，4/10＋1/10＝5/10＝1/2。"],
+["進階","(1/2＋1/3)×6＝？",["3","5","6","1"],1,"括號內為 5/6，乘以 6 得 5。"],
+["進階","5/6－(1/3÷2)＝？",["1/2","2/3","3/4","5/12"],1,"1/3÷2＝1/6；5/6－1/6＝4/6＝2/3。"],
+["進階","2/3÷4/9＝？",["3/2","8/27","2/27","6/9"],0,"2/3×9/4＝18/12＝3/2。"],
+["進階","1－(2/5＋1/4)＝？",["7/20","13/20","3/20","1/20"],0,"2/5＋1/4＝8/20＋5/20＝13/20；1－13/20＝7/20，所以答案 A。"],
+["進階","(3/5×10/9)÷2/3＝？",["1","5/3","2/3","3/2"],0,"3/5×10/9＝2/3；2/3÷2/3＝1。"],
+["策略","一桶水用掉 2/7，再用掉剩下的 1/3，最後剩下原來的幾分之幾？",["2/7","5/7","10/21","1/3"],2,"第一次後剩 5/7；再用掉其 1/3，剩下 2/3×5/7＝10/21。"],
+["策略","若 x＝3/4－(1/2×1/3)，x 等於多少？",["1/12","7/12","5/12","2/3"],1,"先乘法：1/2×1/3＝1/6；3/4－1/6＝9/12－2/12＝7/12。"],
+["策略","(2/3＋1/6)÷5/6＝？",["1","5/6","3/5","6/5"],0,"括號內為 5/6，再除以 5/6 得 1。"],
+["高手","若 a＝2/3，b＝3/4，計算 (a＋b)÷(a×b)。",["17/24","17/6","24/17","7/12"],1,"a+b＝17/12；a×b＝1/2；(17/12)÷(1/2)=17/6。"],
+["魔王","一條繩子長 5/6 公尺，先剪去 1/4 公尺，再把剩下的平均分成 3 段，每段長多少公尺？",["7/36","7/12","7/18","1/4"],0,"5/6－1/4＝10/12－3/12＝7/12；再除以 3 得 7/36。"]
+]},
+{title:"指數魔王戰",icon:"🚀",topic:"2-4 指數律與綜合應用",intro:"本關檢查是否理解指數規則，而不是只背口訣。注意同底數、括號與先乘除後加減。",rule:"指數律",text:"同底數相乘：底數不變、指數相加；同底數相除：指數相減（底數不可為 0）；乘方的乘方：指數相乘。",qs:[
+["暖身","2³ 等於多少？",["6","8","9","12"],1,"2³＝2×2×2＝8。指數是相乘的次數，不是底數乘指數。"],
+["暖身","3²×3³＝？",["3⁵","3⁶","9⁵","6⁵"],0,"同底數相乘，指數相加：3²×3³＝3⁵。"],
+["暖身","5⁴÷5²＝？",["5²","5⁸","1²","25⁴"],0,"同底數相除，指數相減：5⁴⁻²＝5²。"],
+["暖身","(2³)²＝？",["2⁵","2⁶","4⁶","2⁹"],1,"乘方的乘方，指數相乘：2^(3×2)=2⁶。"],
+["暖身","10⁰ 等於多少？",["0","1","10","100"],1,"任何非零數的零次方等於 1。"],
+["進階","2⁴×2²÷2³＝？",["2²","2³","2⁹","2⁶"],1,"同底數指數相加再相減：2^(4+2−3)=2³。"],
+["進階","(3²)³÷3⁴＝？",["3²","3³","3⁴","3⁶"],0,"(3²)³＝3⁶，再除以 3⁴，得到 3²。"],
+["進階","4³×2²＝？用 2 的次方表示。",["2⁵","2⁶","2⁸","2¹⁰"],2,"4³＝(2²)³＝2⁶；再乘 2² 得 2⁸。"],
+["進階","若 2ˣ×2³＝2⁷，x 等於多少？",["2","3","4","5"],2,"同底數相乘指數相加，x+3=7，因此 x=4。"],
+["進階","下列哪一個等式錯誤？",["(2×3)²=2²×3²","2³×2²=2⁵","(3²)³=3⁵","5⁴÷5²=5²"],2,"(3²)³＝3⁶，不是 3⁵。乘方的乘方要將指數相乘。"],
+["策略","比較 A＝2⁵ 與 B＝4³，哪個較大？",["A 大","B 大","相等","無法比較"],1,"A＝32；B＝64，因此 B 較大。"],
+["策略","若 3ᵃ＝81，a 是多少？",["2","3","4","5"],2,"81＝3⁴，所以 a＝4。"],
+["策略","(2²×2³)²÷2⁶＝？",["1","4","8","16"],3,"括號內 2⁵，平方為 2¹⁰，再除 2⁶ 得 2⁴＝16。"],
+["高手","若 2ˣ＝8，3ʸ＝27，則 x＋y＝？",["4","5","6","7"],2,"2³＝8，因此 x＝3；3³＝27，因此 y＝3；總和 6。"],
+["魔王","化簡並計算：(2³×2²)÷(2²)＋3²。",["17","25","32","41"],0,"先算指數：2^(3+2−2)+3²＝2³+9＝8+9＝17，所以答案 A。"]
+]}
+];
+const KEY="numberSlingshotV2";let state=load();let day=0,qi=0,correct=0,streak=0,bestStreak=0,answered=false,reviewMode=false,queue=[];
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||"null");if(s&&Array.isArray(s.completed)&&Array.isArray(s.review))return s}catch(e){}return{unlocked:0,completed:[],stars:0,results:{},review:[]}}
+const $=id=>document.getElementById(id);
+function persist(){localStorage.setItem(KEY,JSON.stringify(state));renderMap();$("stars").textContent=state.stars;$("medals").textContent=state.completed.length}
+function toast(t){$("toast").textContent=t;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2300)}
+function renderMap(){$("days").innerHTML=levels.map((l,i)=>{const done=state.completed.includes(i),locked=i>state.unlocked;return '<button class="day '+(i===day?'active ':'')+(done?'done':'')+'" data-day="'+i+'" '+(locked?'disabled':'')+'><span class="dnum">DAY '+(i+1)+(locked?' 🔒':'')+'</span><span class="ico">'+l.icon+'</span><b>'+l.title+'</b><div class="stars">'+(done?'🏅 '+(state.results[i]?.score??'通關')+'/15':'☆☆☆')+'</div></button>'}).join("");document.querySelectorAll(".day:not(:disabled)").forEach(b=>b.onclick=()=>{day=+b.dataset.day;reviewMode=false;begin()})}
+function begin(){qi=0;correct=0;streak=0;bestStreak=0;reviewMode=false;queue=levels[day].qs.map((q,i)=>i);$("play").style.display="block";$("finish").style.display="none";renderMap();showQ()}
+function showQ(){const l=levels[day],q=l.qs[queue[qi]];answered=false;$("levelTag").textContent="第 "+(day+1)+" 天 · "+l.title;$("qnum").textContent=(reviewMode?"復仇題 ":"第 ")+(qi+1)+" / "+queue.length+" 題";$("bar").style.width=(qi/queue.length*100)+"%";$("diff").textContent=q[0];$("question").textContent=q[1];$("answers").innerHTML=q[2].map((a,i)=>'<button class="ans" data-a="'+i+'">'+String.fromCharCode(65+i)+". "+a+'</button>').join("");$("feedback").textContent="";$("next").disabled=true;$("next").textContent=qi===queue.length-1?"結算本關 🏅":"下一題 →";$("hint").disabled=false;document.querySelectorAll(".ans").forEach(b=>b.onclick=()=>choose(+b.dataset.a));$("intro").textContent=l.intro;$("ruleTitle").textContent=l.rule;$("ruleText").textContent=l.text;renderReview()}
+function choose(n){if(answered)return;const q=levels[day].qs[queue[qi]],buttons=[...document.querySelectorAll(".ans")];if(n===q[3]){answered=true;buttons.forEach(b=>b.disabled=true);correct++;streak++;bestStreak=Math.max(bestStreak,streak);buttons[n].classList.add("correct");$("feedback").textContent="🎯 命中！"+q[4];$("next").disabled=false;$("hint").disabled=true}else{streak=0;buttons[n].classList.add("wrong");$("feedback").textContent="差一點，再選一次；答對才能前進。";if(!q.missed){q.missed=true;state.review.unshift({day:day+1,question:q[1],picked:q[2][n],answer:q[2][q[3]],explain:q[4],time:new Date().toISOString()});state.review=state.review.slice(0,20);persist()}}}
+function showFinish(){const total=queue.length,pass=correct>=10,stars=correct>=14?3:correct>=12?2:correct>=10?1:0; $("play").style.display="none";$("finish").style.display="block";$("bar").style.width="100%";$("resultCorrect").textContent=correct+"/"+total;$("resultStars").textContent="⭐".repeat(stars)||"0";$("resultStreak").textContent=bestStreak;
+if(reviewMode){$("medalIcon").textContent="🔁";$("finishTitle").textContent="錯題復仇完成";$("finishText").textContent="你完成了 "+correct+" / "+total+" 道復仇題。回到原關卡，繼續累積精熟度！";$("finishBtn").textContent="回到本關";$("finishBtn").onclick=()=>begin();$("retryWrong").style.display="none";return}
+const first=!state.completed.includes(day);if(pass){if(first){state.completed.push(day);state.completed.sort((a,b)=>a-b);state.stars+=stars;state.results[day]={score:correct,stars,at:new Date().toISOString()}}state.unlocked=Math.max(state.unlocked,Math.min(4,day+1));persist();$("medalIcon").textContent=correct>=14?"🏆":"🏅";$("finishTitle").textContent=correct>=14?"完美命中！":correct>=12?"漂亮通關！":"關卡通過！";$("finishText").textContent="答對 "+correct+" 題，達到 10 題通關門檻。"+(first?"獲得 "+stars+" 顆星星，下一關已解鎖！":"你已完成過本關，紀錄已保留。");$("finishBtn").textContent=day<4?"前往下一關 →":"完成五日挑戰";$("finishBtn").onclick=()=>{if(day<4){day++;begin()}else{toast("五日主線完成！可繼續挑戰錯題或重玩低星關卡。");renderMap();begin()}}}else{$("medalIcon").textContent="🧰";$("finishTitle").textContent="再練一輪就能突破";$("finishText").textContent="目前答對 "+correct+" 題，通關需要至少 10 題。別擔心，先用錯題復仇看懂解法，再重新挑戰；不會清空進度。";$("finishBtn").textContent="重新挑戰本關";$("finishBtn").onclick=()=>begin()}$("retryWrong").style.display="inline-block"}
+function renderReview(){$("review").innerHTML=state.review.length?state.review.map(r=>'<div class="reviewitem"><strong>Day '+r.day+'｜'+escapeHtml(r.question)+'</strong><br>你的答案：'+escapeHtml(r.picked)+'<br>正確答案：'+escapeHtml(r.answer)+'<br>'+escapeHtml(r.explain)+'</div>').join(""):'<div class="muted">答錯的題目會保存在這裡，方便下次家教複習。</div>'}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("next").onclick=()=>{if(!answered)return;if(qi<queue.length-1){qi++;showQ()}else showFinish()};
+$("hint").onclick=()=>{const q=levels[day].qs[queue[qi]];$("feedback").textContent="💡 提示：先圈出題目要求，再寫出一步計算或規則。\n"+q[4].split("。")[0]+"。";$("hint").disabled=true};
+$("retryWrong").onclick=()=>{const wrongIndices=levels[day].qs.map((q,i)=>({q,i})).filter(x=>state.review.some(r=>r.day===day+1&&r.question===x.q[1])).map(x=>x.i);if(!wrongIndices.length){toast("本關目前沒有錯題！可以重玩全關挑戰更高星。");return}queue=[...new Set(wrongIndices)];if(!queue.length)return;qi=0;correct=0;streak=0;bestStreak=0;reviewMode=true;$("finish").style.display="none";$("play").style.display="block";showQ()};
+$("export").onclick=()=>{const blob=new Blob([JSON.stringify({format:KEY,savedAt:new Date().toISOString(),state},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="數字彈弓隊進度備份.json";a.click();URL.revokeObjectURL(a.href);toast("已下載進度備份，記得存到 Google Drive。")};
+$("import").onclick=()=>$("backup").click();$("backup").onchange=async e=>{try{const d=JSON.parse(await e.target.files[0].text());if(d.format!==KEY||!d.state||!Array.isArray(d.state.completed))throw Error();state=d.state;persist();begin();toast("進度還原完成！")}catch(err){alert("檔案格式不正確，請選擇數字彈弓隊 2.0 的 JSON 備份。")}e.target.value=""};
+$("reset").onclick=()=>{if(confirm("確定清除本機的全部闖關進度？建議先下載備份。")){state={unlocked:0,completed:[],stars:0,results:{},review:[]};persist();day=0;begin()}};
+persist();begin();
+</script></body></html>
