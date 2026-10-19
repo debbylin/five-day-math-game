@@ -134,6 +134,39 @@ function speakText(text){
  if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window)){toast('此瀏覽器不支援語音播放，請改用 Chrome 或 Safari。');return}
  const synth=window.speechSynthesis;synth.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.82;const voices=synth.getVoices();utterance.voice=voices.find(v=>/^en-US(?:-|$)/i.test(v.lang))||null;if(!utterance.voice&&!voices.some(v=>/^en-US(?:-|$)/i.test(v.lang))){toast("尚未找到美式英文語音，請在裝置文字轉語音設定中安裝 English (United States)。將嘗試使用瀏覽器預設語音。");}utterance.onerror=event=>{if(event.error!=='canceled'&&event.error!=='interrupted')toast('語音播放失敗，請檢查裝置音量或瀏覽器語音設定。')};try{synth.resume();synth.speak(utterance)}catch(e){toast('無法啟動語音，請檢查瀏覽器語音設定。')}
 }
+// 單字優先使用可取得的美式詞典真人／錄製發音；無音檔時才回退至裝置語音。
+async function speakWord(text){
+ const word=String(text).trim();
+ if(!word)return;
+ // 多字片語通常沒有可直接使用的單字詞典音檔，保留原本語音播放。
+ if(/\\s/.test(word)){speakWordFallback(word);return}
+ try{
+  const response=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(word));
+  if(!response.ok)throw new Error('No dictionary audio');
+  const entries=await response.json();
+  const clips=entries.flatMap(entry=>entry.phonetics||[]).filter(item=>item.audio);
+  clips.sort((a,b)=>{
+   const au=/[-_]us(?:\\.|[-_])/i.test(a.audio)?0:1;
+   const bu=/[-_]us(?:\\.|[-_])/i.test(b.audio)?0:1;
+   return au-bu;
+  });
+  if(!clips.length)throw new Error('No pronunciation clip');
+  const audio=new Audio(clips[0].audio);
+  audio.onerror=()=>speakWordFallback(word);
+  await audio.play();
+ }catch(error){speakWordFallback(word)}
+}
+function speakWordFallback(text){
+ if(!('speechSynthesis'in window)||!('SpeechSynthesisUtterance'in window)){toast('目前無法播放發音，請改用 Chrome 或 Safari。');return}
+ const synth=window.speechSynthesis;synth.cancel();
+ const utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-US';utterance.rate=.92;utterance.pitch=1;
+ const voices=synth.getVoices();
+ const american=voices.filter(v=>/^en-US(?:-|$)/i.test(v.lang));
+ utterance.voice=american.find(v=>/google us english|enhanced|natural|neural/i.test(v.name))||american[0]||null;
+ if(!utterance.voice)toast('未找到美式語音；請在平板語音設定安裝 English (United States)。');
+ utterance.onerror=event=>{if(event.error!=='canceled'&&event.error!=='interrupted')toast('語音播放失敗，請檢查平板語音設定。')};
+ try{synth.resume();synth.speak(utterance)}catch(e){toast('無法啟動語音，請檢查瀏覽器語音設定。')}
+}
 const exampleSentences=[
 {
 'family':'My family is nice.','husband':'Her husband is a farmer.','wife':'His wife is a nurse.','uncle':'My uncle is a doctor.','aunt':'My aunt is beautiful.','cousin':'My cousin is young.','son':'The son is in my class.','daughter':'Their daughter is cute.','parent':'My parent is kind.','child':'The child is in the classroom.','young':'The young woman is a doctor.','man':'The man is handsome.','handsome':'That man is handsome.','our':'Our class is really nice.','really':'My family is really warm.','classroom':'Our classroom is nice.','same':'We are in the same class.','class':'Our class is nice.','again':'Please say it again.','too':'He is too young.','news':'The news is about our school.','problem':'We have a problem.','strict':'My teacher is strict.','junior high school':'My junior high school is near my home.','warm':'My family is warm.','farmer':'My uncle is a farmer.','cook':'My uncle is a cook.','nurse':'My aunt is a nurse.','beautiful':'My aunt is beautiful.','woman':'The woman is a doctor.','doctor':'My cousin is a doctor.','senior high school':'My sister goes to senior high school.','pet':'Our pet is cute.','cute':'The pet is cute.','nice':'My classmates are nice.'
@@ -148,7 +181,7 @@ const exampleSentences=[
 'listen':'Listen to my voice.','voice':'Her voice is beautiful.','stand up':'Please stand up.','sit down':'Please sit down.','take a photo':'Can you take a photo?','make':'Let’s make a song.','any':'Do you have any questions?','noise':'Please do not make noise.','talk':'Please talk to your teacher.','noisy':'The room is noisy.','late':'Do not be late.','early':'We get up early.','sidewalk':'Walk on the sidewalk.','song':'This is my favorite song.','check out':'Let’s check out the sign.','cross':'Cross the road at the crosswalk.','road':'The road is busy.','watch out':'Watch out for cars.','real':'The story is real.','all the time':'I listen to music all the time.','traffic lights':'Stop at the traffic lights.','ground':'The book is on the ground.','design':'I like the design.','user':'The user can choose a theme.','download':'Download the photo.','warn':'The sign can warn people.','oncoming':'Watch out for oncoming traffic.','crosswalk':'Cross at the crosswalk.','also':'I also like this song.','the USA':'My uncle lives in the USA.','special':'This is a special day.','lane':'Stay in the bike lane.','way':'This is the right way.','other':'I have other photos.'
 }
 ];
-function renderVocab(){const unit=vocabUnits[selectedUnit];$('unitTabs').innerHTML=vocabUnits.map((u,i)=>`<button class="tab ${i===selectedUnit?'active':''}" data-unit="${i}">${u.unit} · ${u.name}</button>`).join('');document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{selectedUnit=+b.dataset.unit;renderVocab()});$('wordCount').textContent=`${unit.unit}｜${unit.words.length} 個單字／片語`;$('wordgrid').innerHTML=unit.words.map(([word,gloss],i)=>{const sentence=exampleSentences[selectedUnit][word]||`I can use “${word}” in a sentence.`;return `<article class="wordcard" tabindex="0" role="group" aria-label="${esc(word)} 單字卡，點擊翻面"><div class="wordfront"><div><div class="word">${esc(word)}</div><div class="flip-hint">點卡片翻面 ↻</div></div><div class="gloss">${esc(gloss)}</div></div><div class="wordback"><div><div class="word">${esc(word)}</div><div class="gloss">${esc(gloss)}</div></div><div class="example-sentence">${esc(sentence)}</div><div class="card-actions"><button type="button" data-word="${i}">🔊 播放單字</button><button type="button" data-read="${i}">🔊 播放例句</button></div></div></article>`}).join('');document.querySelectorAll('.wordcard').forEach((card,i)=>{const flip=()=>card.classList.toggle('flipped');card.addEventListener('click',e=>{if(!e.target.closest('button'))flip()});card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target===card){e.preventDefault();flip()}});const [word]=unit.words[i];const sentence=exampleSentences[selectedUnit][word]||`I can use “${word}” in a sentence.`;card.querySelector('[data-word]').onclick=(event)=>{event.stopPropagation();speakText(word)};card.querySelector('[data-read]').onclick=(event)=>{event.stopPropagation();speakText(sentence)}})}
+function renderVocab(){const unit=vocabUnits[selectedUnit];$('unitTabs').innerHTML=vocabUnits.map((u,i)=>`<button class="tab ${i===selectedUnit?'active':''}" data-unit="${i}">${u.unit} · ${u.name}</button>`).join('');document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{selectedUnit=+b.dataset.unit;renderVocab()});$('wordCount').textContent=`${unit.unit}｜${unit.words.length} 個單字／片語`;$('wordgrid').innerHTML=unit.words.map(([word,gloss],i)=>{const sentence=exampleSentences[selectedUnit][word]||`I can use “${word}” in a sentence.`;return `<article class="wordcard" tabindex="0" role="group" aria-label="${esc(word)} 單字卡，點擊翻面"><div class="wordfront"><div><div class="word">${esc(word)}</div><div class="flip-hint">點卡片翻面 ↻</div></div><div class="gloss">${esc(gloss)}</div></div><div class="wordback"><div><div class="word">${esc(word)}</div><div class="gloss">${esc(gloss)}</div></div><div class="example-sentence">${esc(sentence)}</div><div class="card-actions"><button type="button" data-word="${i}">🔊 播放單字</button><button type="button" data-read="${i}">🔊 播放例句</button></div></div></article>`}).join('');document.querySelectorAll('.wordcard').forEach((card,i)=>{const flip=()=>card.classList.toggle('flipped');card.addEventListener('click',e=>{if(!e.target.closest('button'))flip()});card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target===card){e.preventDefault();flip()}});const [word]=unit.words[i];const sentence=exampleSentences[selectedUnit][word]||`I can use “${word}” in a sentence.`;card.querySelector('[data-word]').onclick=(event)=>{event.stopPropagation();speakWord(word)};card.querySelector('[data-read]').onclick=(event)=>{event.stopPropagation();speakText(sentence)}})}
 function renderMap(){$('days').innerHTML=days.map((d,i)=>`<button class="day ${i===day?'active ':''}${state.done.includes(i)?'done':''}" data-i="${i}" ${i>state.unlocked?'disabled':''}><span class="num">DAY ${i+1}${i>state.unlocked?' 🔒':''}</span><span class="ico">${d.icon}</span><b>${d.title}</b><small>${d.scope}<br>${state.done.includes(i)?'🏅 已通關':'15 題 · 錯題重答'}</small></button>`).join('');document.querySelectorAll('.day:not(:disabled)').forEach(b=>b.onclick=()=>{day=+b.dataset.i;begin()});if($('unitTabs'))renderVocab()}
 function begin(){vocabMode=false;activeQuestions=null;qi=0;correct=0;streak=0;best=0;answered=false;$('play').style.display='block';$('finish').style.display='none';renderMap();showQ()}
 function currentQuestions(){return vocabMode?activeQuestions:days[day].qs}
