@@ -208,7 +208,7 @@ function makeQuestions(){
  const history=state.seen=state.seen||{};const key=String(lesson);const recent=new Set(history[key]||[]);
  const fresh=unique.filter(q=>!recent.has(q[1]));
  const choices=(fresh.length>=15?fresh:unique).sort(()=>Math.random()-.5).slice(0,15);
- history[key]=[...new Set([...(history[key]||[]),...choices.map(q=>q[1])])].slice(-Math.max(15,unique.length-15));
+ history[key]=[...new Set([...(history[key]||[]),...choices.map(q=>q[1])])].slice(-Math.max(15,unique.length-15));localStorage.setItem(KEY,JSON.stringify(state));
  return choices;
 }
 function begin(){vocabLesson=lesson;activeQuestions=makeQuestions();qi=0;correct=0;streak=0;best=0;answered=false;$('play').style.display='block';$('finish').style.display='none';renderMap();showQ()}
