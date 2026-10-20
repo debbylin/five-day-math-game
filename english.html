@@ -126,13 +126,13 @@ const vocabUnits=[
 ];
 const DAY_UNIT_SCOPE=[[0],[1],[2],[0,1,2],[0,1,2,3]];
 function americanQuestion(type,prompt,answer,wrong,why){const choices=[...new Set([answer,...wrong])].slice(0,4);while(choices.length<4)choices.push(`選項 ${choices.length+1}`);for(let i=choices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[choices[i],choices[j]]=[choices[j],choices[i]]}return[type,prompt,choices,choices.indexOf(answer),why]}
-function spellingSlip(word){return word.replace(/[A-Za-z]/,c=>String.fromCharCode(c.toLowerCase()==='z'?97:c.charCodeAt(0)+1))}
+function spellingSlip(word){const parts=word.split(' '),first=parts[0];let misspelled;if(first.length>4){const at=Math.floor(first.length/2);misspelled=first.slice(0,at)+first.slice(at+1)}else if(first.length>2){const at=Math.floor(first.length/2);misspelled=first.slice(0,at)+first[at+1]+first[at]+first.slice(at+2)}else{misspelled=first.slice(0,-1)}return [misspelled,...parts.slice(1)].join(' ')}
 function buildEnglishBanks(){return days.map((day,dayIndex)=>{const units=DAY_UNIT_SCOPE[dayIndex],words=[];let cursor=0;while(words.length<40&&units.some(i=>cursor<vocabUnits[i].words.length)){for(const ui of units){const entry=vocabUnits[ui].words[cursor];if(entry)words.push({ui,word:entry[0],gloss:entry[1]})}cursor++}
  const bank=[];for(const item of words){const {ui,word,gloss}=item,unitWords=vocabUnits[ui].words,wrong=unitWords.filter(x=>x[0]!==word).map(x=>x[0]).slice(0,3),wrongGloss=[...new Set(unitWords.filter(x=>x[0]!==word).map(x=>x[1]))].slice(0,3),sentence=(exampleSentences[ui]&&exampleSentences[ui][word])||`I see the word ${word}.`;
  bank.push(americanQuestion('單字選擇',`「${gloss}」的英文單字或片語是？`,word,wrong,`${word}＝${gloss}`));
  bank.push(americanQuestion('字義選擇',`“${word}” 的意思是？`,gloss,wrongGloss,`${word}＝${gloss}`));
  const blank=sentence.replace(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),'_____');bank.push(americanQuestion('填空選擇',`選出最適合填入句子的字詞：\n${blank}`,word,wrong,`完整句子：${sentence}`));
- const typo=spellingSlip(word);bank.push(americanQuestion('改錯選擇',`拼字訂正：「${typo}」應改成哪個正確單字？`,word,wrong,`正確拼法：${word}；意思是「${gloss}」。`));
+ const typo=spellingSlip(word);bank.push(americanQuestion('改錯選擇',`拼字訂正：「${typo}」（本題要表達「${gloss}」）應改成哪個正確單字？`,word,wrong,`正確拼法：${word}；意思是「${gloss}」。`));
  }
  const seen=new Set(),unique=[...bank,...day.qs].filter(q=>{if(seen.has(q[1]))return false;seen.add(q[1]);return true});
  let extra=0;while(unique.length<150){const {ui,word,gloss}=words[extra%words.length],unitWords=vocabUnits[ui].words,wrong=unitWords.filter(x=>x[0]!==word).map(x=>x[0]).slice(0,3),sentence=(exampleSentences[ui]&&exampleSentences[ui][word])||`I see the word ${word}.`,blank=sentence.replace(new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'),'_____'),q=americanQuestion('填空選擇',`依句意選出最適合的字詞：\n${blank}`,word,wrong,`完整句子：${sentence}`);extra++;if(!seen.has(q[1])){seen.add(q[1]);unique.push(q)}}
